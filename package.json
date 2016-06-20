@@ -1,0 +1,17 @@
+{
+  "name": "100daysofcodebot",
+  "version": "1.0.0",
+  "description": "#100daysofcode bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "#100daysofcode"
+  ],
+  "author": "amandeepmittal",
+  "license": "MIT",
+  "dependencies": {
+    "twit": "^2.2.4"
+  }
+}
