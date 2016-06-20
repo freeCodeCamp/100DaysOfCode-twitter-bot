@@ -15,6 +15,10 @@
     "npm",
     "retweet"
   ],
+  "engines": {
+    "node": "~6.1.0",
+    "npm": "~.3.8.6"
+  },
   "author": "aman mittal <@amanhimself>",
   "bugs": {
     "url": "https://github.com/amandeepmittal/100DaysOfCode/issues"
