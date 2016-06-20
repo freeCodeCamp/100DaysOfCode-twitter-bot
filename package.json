@@ -4,14 +4,28 @@
   "description": "#100daysofcode bot",
   "main": "bot.js",
   "scripts": {
+    "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "#100daysofcode"
+    "#100daysofcode",
+    "Twitter",
+    "JavaScript",
+    "Nodejs",
+    "npm",
+    "retweet"
   ],
-  "author": "amandeepmittal",
+  "author": "aman mittal <@amanhimself>",
+  "bugs": {
+    "url": "https://github.com/amandeepmittal/100DaysOfCode/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "twit": "^2.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amandeepmittal/100DaysOfCode.git"
+  },
+  "homepage": "https://github.com/amandeepmittal/100DaysOfCode"
 }
