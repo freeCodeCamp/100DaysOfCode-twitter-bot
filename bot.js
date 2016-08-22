@@ -18,7 +18,7 @@ var retweet = function () {
     q: queryString,
     result_type: 'recent',
     lang: 'en'
-  }
+  };
   // for more parameters options, see: https://dev.twitter.com/rest/reference/get/search/tweets
   Twitter.get('search/tweets', params, function (err,data) {
     // if no errors
@@ -29,13 +29,13 @@ var retweet = function () {
       Twitter.post('statuses/retweet/:id', {
         id: retweetId
       }, function (err,response) {
-        if(response){
-          console.log('Retweet. SUCCESS!');
-        }
         // if error while retweet
         if(err){
           console.log('While Retweet. ERROR!...Maybe Duplicate Tweet');
+        } else {
+          console.log('Retweet. SUCCESS!');
         }
+
       });
     }
     // if unable to search a tweet
@@ -43,7 +43,7 @@ var retweet = function () {
       console.log('Cannot Search Tweet. ERROR!');
     }
   });
-}
+};
 
 retweet();
 // retweet every 1 minutes
@@ -56,7 +56,7 @@ var favoriteTweet = function () {
     q          : queryString,
     result_type: 'recent',
     lang       : 'en'
-  }
+  };
   // for more parameters, see: https://dev.twitter.com/rest/reference
 
   // find a tweet
@@ -79,7 +79,7 @@ var favoriteTweet = function () {
         });
       }
   });
-}
+};
 // grab & 'favorite' a tweet ASAP program is running
 favoriteTweet();
 // 'favorite' a tweet every 1 minutes
@@ -97,9 +97,8 @@ stream.on('follow', followed);
 function followed(event) {
   console.log('Follow Event now RUNNING');
   // get USER's twitter handler (screen name)
-  var
-    name = event.source.name,
-    screenName = event.source.screen_name;
+  var name = event.source.name,
+      screenName = event.source.screen_name;
   // function that replies back to every USER who followed for the first time
   tweetNow('@' + screenName + ' Thank you. What are you working on today?');
 }
@@ -108,7 +107,7 @@ function followed(event) {
 function tweetNow(tweetTxt) {
   var tweet = {
     status: tweetTxt
-  }
+  };
   Twitter.post('statuses/update', tweet, function (err,data, response) {
     if(err){
       console.log("Cannot Reply to Follower. ERROR!");
