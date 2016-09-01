@@ -46,8 +46,8 @@ var retweet = function () {
 };
 
 retweet();
-// retweet every 2 minutes
-setInterval(retweet, 120000);
+// retweet every 6 minutes
+setInterval(retweet, 360000);
 
 // FAVORITE ==============================
 // find a random tweet using querySring and 'favorite' it
@@ -82,8 +82,8 @@ var favoriteTweet = function () {
 };
 // grab & 'favorite' a tweet ASAP program is running
 favoriteTweet();
-// 'favorite' a tweet every 5 minutes
-setInterval(favoriteTweet, 300000);
+// 'favorite' a tweet every 12 minutes
+setInterval(favoriteTweet, 720000);
 
 // STREAM API for interacting with a USER =======
 // set up a user stream
