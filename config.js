@@ -6,8 +6,8 @@
 * access_token_secret
 */
 module.exports = {
-  consumer_key       : '688TI87yvvDVdiOI4z5U46MRR',
-  consumer_secret    : '7EyVSWif2du6jK7Icy79STMdIy3JYCV9mnYnLI7N0EKmEREznp',
-  access_token       : '744776302591303680-OxZHImd07Cb0UyzFxNCs98YuJoHxkkk',
-  access_token_secret: 'YE1qjQwSsAj8C79rndF5Eow2VcYnoqXQEkFuifmnQhtTh'
+  consumer_key       : 'U4jP3EcifRwHqGmF4N3hteiu3',
+  consumer_secret    : 'CVE928h6zF8i3fxorfhgCsM5hx0pcrhEN6X6ytllsHHGMZupqV',
+  access_token       : '744776302591303680-8zCcDzC6Oa2qfFTfOGgye35PDM4JG7I',
+  access_token_secret: 'K1EOgdL5QnbBMuVWSmt8wMzbDuCyYuaPrCX0ZcF09sBl3'
 };
