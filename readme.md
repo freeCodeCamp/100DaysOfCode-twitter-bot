@@ -6,12 +6,12 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 
 ![](src/images/Screen Shot 2016-11-21 at 12.45.11 PM.png)
 
-## What can this bot do?
+# What can this bot do?
 
-### Retweet & Like a Tweet
+## Retweet & Like a Tweet
 ![](src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
 
-### When Followed, automated reply to the user
+## When Followed, automated reply to the user
 ![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
 ## Pre-requisites
