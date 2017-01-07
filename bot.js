@@ -155,7 +155,7 @@ function checkIfLastDay(tweet) {
 }
 
 function checkTweetForText(tweetText, value){
-  return tweetText.toLowerCase().indexOf(value) > -1 && text.toLowerCase().indexOf('100daysofcode') > -1
+  return tweetText.toLowerCase().indexOf(value) > -1 && tweetText.toLowerCase().indexOf('100daysofcode') > -1
 }
 
 function ranDom(arr) {
