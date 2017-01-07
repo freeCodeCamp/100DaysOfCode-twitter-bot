@@ -128,6 +128,9 @@ hashtagStream.on('tweet', (tweet) => {
   if (checkIfFirstDay(tweet)) {
     console.log(`Sending a congrats to @${tweet.user.screen_name}`)
     tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
+  } else if (checkIfLastDay(tweet)) {
+    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+    tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
   };
 })
 
@@ -136,6 +139,16 @@ function checkIfFirstDay(tweet) {
   console.log(`Checking if first day`)
   for (let i = 0; i < firstDay.length; i++) {    
     if (checkTweetForText(tweet.text, firstDay[i])) {
+      return true;
+    }
+  }
+}
+
+function checkIfLastDay(tweet) {
+  const lastDay = ['finished', '#day100', 'final day', 'day 100', 'one hundred', '100/100'];
+  console.log(`Checking if Last day`)
+  for (let i = 0; i < lastDay.length; i++) {    
+    if (checkTweetForText(tweet.text, lastDay[i])) {
       return true;
     }
   }
