@@ -18,11 +18,13 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 
 This bot uses the `twit` npm package to manipulate tweets and streams and communicate with Twitter API. Please refer [documentation](https://github.com/ttezel/twit) to make substantial changes.
 
-### Contributing
+## Contributing
 
 You can help out by:
 
-Pointing out bugs/errors.
+- Solving exisiting issues
+- Enhancing the bot adding more functionalities (see issues)
+- Pointing out bugs/errors
 
 For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
 
@@ -33,5 +35,10 @@ Simply do:
 - Make sure the code style looks similar to the existing code
 - Create a pull request
 
+--- 
+
 ### License
-MIT
+
+BSD 3-Clause License
+
+Copyright (c) 2017, Free Code Camp. All rights reserved.
