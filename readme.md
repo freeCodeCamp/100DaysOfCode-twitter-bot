@@ -15,7 +15,7 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 ![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
 ## Congratulating user on starting/finishing #100DaysOfCode Challenge
-[Imgur](http://i.imgur.com/d8pu9LO.png)
+![Imgur](http://i.imgur.com/d8pu9LO.png)
 
 ## Pre-requisites
 
