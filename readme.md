@@ -14,6 +14,9 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 ## When Followed, automated reply to the user
 ![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
+## Congratulating user on starting/finishing #100DaysOfCode Challenge
+[Imgur](http://i.imgur.com/d8pu9LO.png)
+
 ## Pre-requisites
 
 This bot uses the `twit` npm package to manipulate tweets and streams and communicate with Twitter API. Please refer [documentation](https://github.com/ttezel/twit) to make substantial changes.
