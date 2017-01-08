@@ -119,11 +119,12 @@ function tweetNow(tweetTxt) {
   });
 }
 
-// DAY 1 CONGRATS ========
+// Congratulation Messages for Day 1 & Day 100 ========
 const hashtagStream = Twitter.stream('statuses/filter', {
   track: ['#100DaysOfCode']
 });
 
+// Function that checks if day 1 or day 100
 hashtagStream.on('tweet', (tweet) => {
   if (checkIfFirstDay(tweet)) {
     console.log(`Sending a congrats to @${tweet.user.screen_name}`)
@@ -133,6 +134,8 @@ hashtagStream.on('tweet', (tweet) => {
     tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
   };
 })
+
+// NOTE: String elements in firstDay & lastDay are case insensitive
 
 function checkIfFirstDay(tweet) {
   const firstDay = ['#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
