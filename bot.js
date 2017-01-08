@@ -3,6 +3,7 @@
  */
 var twit = require('twit');
 var config = require('./config');
+var sentiment = require('./sentiment');
 
 var Twitter = new twit(config);
 
@@ -123,3 +124,37 @@ function ranDom(arr) {
   var index = Math.floor(Math.random()*arr.length);
   return arr[index];
 }
+
+
+// SENTIMENT DETECTION =================
+const hashtagStream = Twitter.stream('statuses/filter', {
+   track: '#100DaysOfCode'
+});
+
+hashtagStream.on('tweet', (tweet) => {
+
+  //  Setup the http call
+  var httpCall = sentiment.init()
+
+  // Don't do anything if it's the bot tweet
+  if (tweet.user.screen_name == '_100DaysOfCode') return;
+
+  httpCall.send("txt=" + tweet.text).end(function (result) {
+
+    var sentim = result.body.result.sentiment;
+    var confidence = parseFloat(result.body.result.confidence);
+
+    // if sentiment is Negative and the confidence is above 75%
+    if (sentim == 'Negative' && confidence >= 75) {
+
+      // get a random quote
+      var phrase = sentiment.randomQuote()
+      var screen_name = tweet.user.screen_name
+
+      // tweet a random encouragement phrase
+      tweetNow('@' + screen_name + ' ' + phrase)
+
+    }
+
+  });
+ })
