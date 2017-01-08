@@ -1,8 +1,12 @@
 /**
  * DEPENDENCIES
  */
+"use strict"; // added for use on c9
+
 var twit = require('twit');
 var config = require('./config');
+var uniqueRandomArray = require('unique-random-array');
+
 
 var Twitter = new twit(config);
 
@@ -165,3 +169,27 @@ function ranDom(arr) {
   var index = Math.floor(Math.random() * arr.length);
   return arr[index];
 }
+
+function tweetProjectOfTheDay() {
+  
+  var projectOfTheDay = uniqueRandomArray([
+    'Build a Random Quote Machine',
+    'Show the Local Weather',
+    'Build a Wikipedia Viewer',
+    'Use the Twitch.tv JSON API'
+  ]);
+  
+  var message = 'Looking for inspitation for your #100DaysOfCode? Why not try ' + projectOfTheDay()
+  
+  Twitter.post('statuses/update', { status: message }, function(err, data, response) {
+    console.log('POST PROJECT OF THE DAY!')
+  })
+
+}
+
+// post random project of the day 
+tweetProjectOfTheDay();
+// post sample project every 24 hours
+setInterval(tweetProjectOfTheDay, 86400000);
+
+
