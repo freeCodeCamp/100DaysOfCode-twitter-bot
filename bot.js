@@ -135,7 +135,7 @@ hashtagStream.on('tweet', (tweet) => {
 })
 
 function checkIfFirstDay(tweet) {
-  const firstDay = ['started', '#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
+  const firstDay = ['#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
   console.log(`Checking if first day`)
   for (let i = 0; i < firstDay.length; i++) {    
     if (checkTweetForText(tweet.text, firstDay[i])) {
@@ -145,7 +145,7 @@ function checkIfFirstDay(tweet) {
 }
 
 function checkIfLastDay(tweet) {
-  const lastDay = ['finished', '#day100', 'final day', 'day 100', 'one hundred', '100/100'];
+  const lastDay = ['#day100', 'final day', 'day 100', 'one hundred', '100/100'];
   console.log(`Checking if Last day`)
   for (let i = 0; i < lastDay.length; i++) {    
     if (checkTweetForText(tweet.text, lastDay[i])) {
