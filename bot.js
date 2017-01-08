@@ -125,12 +125,12 @@ const hashtagStream = Twitter.stream('statuses/filter', {
 });
 
 hashtagStream.on('tweet', (tweet) => {
-  if (checkIfFirstDay(tweet)) {
-    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
-    tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
-  } else if (checkIfLastDay(tweet)) {
+  if (checkIfLastDay(tweet)) {
     console.log(`Sending a congrats to @${tweet.user.screen_name}`)
     tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
+  } else if (checkIfFirstDay(tweet)) {
+    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+    tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
   };
 })
 
