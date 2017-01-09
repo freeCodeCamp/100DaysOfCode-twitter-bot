@@ -1,8 +1,12 @@
 /**
  * DEPENDENCIES
  */
+"use strict"; // added for use on c9
+
 var twit = require('twit');
 var config = require('./config');
+var uniqueRandomArray = require('unique-random-array');
+
 
 var Twitter = new twit(config);
 
@@ -140,7 +144,7 @@ hashtagStream.on('tweet', (tweet) => {
 function checkIfFirstDay(tweet) {
   const firstDay = ['#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
   console.log(`Checking if first day`)
-  for (let i = 0; i < firstDay.length; i++) {    
+  for (let i = 0; i < firstDay.length; i++) {
     if (checkTweetForText(tweet.text, firstDay[i])) {
       return true;
     }
@@ -150,7 +154,7 @@ function checkIfFirstDay(tweet) {
 function checkIfLastDay(tweet) {
   const lastDay = ['#day100', 'final day', 'day 100', 'one hundred', '100/100'];
   console.log(`Checking if Last day`)
-  for (let i = 0; i < lastDay.length; i++) {    
+  for (let i = 0; i < lastDay.length; i++) {
     if (checkTweetForText(tweet.text, lastDay[i])) {
       return true;
     }
@@ -165,3 +169,29 @@ function ranDom(arr) {
   var index = Math.floor(Math.random() * arr.length);
   return arr[index];
 }
+
+function tweetProjectOfTheDay() {
+
+  var projectOfTheDay = uniqueRandomArray([
+    'Build a Random Quote Machine',
+    'Show the Local Weather',
+    'Build a Wikipedia Viewer',
+    'Use the Twitch.tv JSON API',
+    'Build a JavaScript Calculator',
+    'Build a Pomodoro Clock',
+    'Build a Tic Tac Toe Game',
+    'Build a Simon Game'
+  ]);
+
+  var message = 'Looking for inspitation for your #100DaysOfCode? Why not try ' + projectOfTheDay()
+
+  Twitter.post('statuses/update', { status: message }, function(err, data, response) {
+    console.log('POST PROJECT OF THE DAY!')
+  })
+
+}
+
+// post random project of the day
+tweetProjectOfTheDay();
+// post sample project every 24 hours
+setInterval(tweetProjectOfTheDay, 86400000);
