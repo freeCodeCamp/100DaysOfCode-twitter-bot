@@ -171,11 +171,11 @@ function ranDom(arr) {
 
 
 // SENTIMENT DETECTION =================
-const hashtagStream = Twitter.stream('statuses/filter', {
+const hashtagStream2 = Twitter.stream('statuses/filter', {
    track: '#100DaysOfCode'
 });
 
-hashtagStream.on('tweet', (tweet) => {
+hashtagStream2.on('tweet', (tweet) => {
 
   //  Setup the http call
   var httpCall = sentiment.init()
