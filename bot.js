@@ -139,10 +139,11 @@ hashtagStream.on('tweet', (tweet) => {
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
 function checkIfFirstDay(tweet) {
-  const firstDay = ['#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
+  const firstDay = ['first day', 'day one', '1/100'];
+  const firstdayRegex = /\bday\s?0?1\b/i;
   console.log(`Checking if first day`)
-  for (let i = 0; i < firstDay.length; i++) {    
-    if (checkTweetForText(tweet.text, firstDay[i])) {
+  for (let i = 0; i < firstDay.length; i++) {
+    if (checkTweetForText(tweet.text, firstDay[i]) || tweet.text.match(firstdayRegex) != null) {
       return true;
     }
   }
@@ -150,9 +151,10 @@ function checkIfFirstDay(tweet) {
 
 function checkIfLastDay(tweet) {
   const lastDay = ['#day100', 'final day', 'day 100', 'one hundred', '100/100'];
+  const lastdayRegex = /\bday\s?100\b/i;
   console.log(`Checking if Last day`)
-  for (let i = 0; i < lastDay.length; i++) {    
-    if (checkTweetForText(tweet.text, lastDay[i])) {
+  for (let i = 0; i < lastDay.length; i++) {
+    if (checkTweetForText(tweet.text, lastDay[i]) || tweet.text.match(lastdayRegex) != null) {
       return true;
     }
   }
