@@ -139,7 +139,7 @@ hashtagStream.on('tweet', (tweet) => {
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
 function checkIfFirstDay(tweet) {
-  const firstDay = ['first day', 'day one', ' 1/100'];
+  const firstDay = ['first day', 'day one', 'day 1/100'];
   const firstdayRegex = /\bday\s?0?1\b/i;
   console.log(`Checking if first day`)
   for (let i = 0; i < firstDay.length; i++) {
