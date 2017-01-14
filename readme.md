@@ -17,6 +17,9 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 ## Congratulating user on starting/finishing #100DaysOfCode Challenge
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
+## #100DaysOfCode tweet has negative sentiment, tweets back encouragement 
+![Imgur](http://i.imgur.com/GQLoYhG.png)
+
 ## Pre-requisites
 
 This bot uses the `twit` npm package to manipulate tweets and streams and communicate with Twitter API. Please refer [documentation](https://github.com/ttezel/twit) to make substantial changes.

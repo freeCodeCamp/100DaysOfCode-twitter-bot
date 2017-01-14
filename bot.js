@@ -7,6 +7,7 @@ var config = require('./config');
 var sentiment = require('./sentiment');
 var ura = require('unique-random-array');
 
+
 var Twitter = new twit(config);
 
 var queryString = '#100DaysOfCode, #100daysofcode';
@@ -141,7 +142,7 @@ hashtagStream.on('tweet', (tweet) => {
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
 function checkIfFirstDay(tweet) {
-  const firstDay = ['first day', 'day one', '1/100'];
+  const firstDay = ['first day', 'day one', 'day 1/100'];
   const firstdayRegex = /\bday\s?0?1\b/i;
   console.log(`Checking if first day`)
   for (let i = 0; i < firstDay.length; i++) {
@@ -229,3 +230,4 @@ function tweetProjectOfTheDay() {
 tweetProjectOfTheDay();
 // post sample project every 24 hours
 setInterval(tweetProjectOfTheDay, 60000 * 1440);
+
