@@ -2,11 +2,10 @@
  * DEPENDENCIES
  */
 "use strict"; // added for use on c9
-
 var twit = require('twit');
 var config = require('./config');
-var uniqueRandomArray = require('unique-random-array');
-
+var sentiment = require('./sentiment');
+var ura = require('unique-random-array');
 
 var Twitter = new twit(config);
 
@@ -130,22 +129,23 @@ const hashtagStream = Twitter.stream('statuses/filter', {
 
 // Function that checks if day 1 or day 100
 hashtagStream.on('tweet', (tweet) => {
-  if (checkIfFirstDay(tweet)) {
-    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
-    tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
-  } else if (checkIfLastDay(tweet)) {
+  if (checkIfLastDay(tweet)) {
     console.log(`Sending a congrats to @${tweet.user.screen_name}`)
     tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
+  } else if (checkIfFirstDay(tweet)) {
+    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+    tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
   };
 })
 
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
 function checkIfFirstDay(tweet) {
-  const firstDay = ['#day01', '#day1 ', 'first day', 'day 1', 'day one', '1/100'];
+  const firstDay = ['first day', 'day one', '1/100'];
+  const firstdayRegex = /\bday\s?0?1\b/i;
   console.log(`Checking if first day`)
   for (let i = 0; i < firstDay.length; i++) {
-    if (checkTweetForText(tweet.text, firstDay[i])) {
+    if (checkTweetForText(tweet.text, firstDay[i]) || tweet.text.match(firstdayRegex) != null) {
       return true;
     }
   }
@@ -153,9 +153,10 @@ function checkIfFirstDay(tweet) {
 
 function checkIfLastDay(tweet) {
   const lastDay = ['#day100', 'final day', 'day 100', 'one hundred', '100/100'];
+  const lastdayRegex = /\bday\s?100\b/i;
   console.log(`Checking if Last day`)
   for (let i = 0; i < lastDay.length; i++) {
-    if (checkTweetForText(tweet.text, lastDay[i])) {
+    if (checkTweetForText(tweet.text, lastDay[i]) || tweet.text.match(lastdayRegex) != null) {
       return true;
     }
   }
@@ -170,28 +171,61 @@ function ranDom(arr) {
   return arr[index];
 }
 
+
+// SENTIMENT DETECTION =================
+const hashtagStream2 = Twitter.stream('statuses/filter', {
+   track: '#100DaysOfCode'
+});
+
+hashtagStream2.on('tweet', (tweet) => {
+
+  //  Setup the http call
+  var httpCall = sentiment.init()
+
+  // Don't do anything if it's the bot tweet
+  if (tweet.user.screen_name == '_100DaysOfCode') return;
+
+  httpCall.send("txt=" + tweet.text).end(function (result) {
+
+    var sentim = result.body.result.sentiment;
+    var confidence = parseFloat(result.body.result.confidence);
+
+    // if sentiment is Negative and the confidence is above 75%
+    if (sentim == 'Negative' && confidence >= 75) {
+
+      // get a random quote
+      var phrase = sentiment.randomQuote()
+      var screen_name = tweet.user.screen_name
+
+      // tweet a random encouragement phrase
+      tweetNow('@' + screen_name + ' ' + phrase)
+
+    }
+
+  });
+ })
+ 
+ // PROJECT OF THE DAY TWEET
 function tweetProjectOfTheDay() {
 
-  var projectOfTheDay = uniqueRandomArray([
+  var projectOfTheDay = ura([
     'Build a Random Quote Machine',
     'Show the Local Weather',
     'Build a Wikipedia Viewer',
-    'Use the Twitch.tv JSON API',
-    'Build a JavaScript Calculator',
-    'Build a Pomodoro Clock',
-    'Build a Tic Tac Toe Game',
-    'Build a Simon Game'
+    'Use the Twitch.tv JSON API'
   ]);
 
   var message = 'Looking for inspitation for your #100DaysOfCode? Why not try ' + projectOfTheDay()
 
-  Twitter.post('statuses/update', { status: message }, function(err, data, response) {
+  Twitter.post('statuses/update', {
+    status: message
+  }, function(err, data, response) {
     console.log('POST PROJECT OF THE DAY!')
   })
 
 }
 
-// post random project of the day
+// post random project of the day 
 tweetProjectOfTheDay();
 // post sample project every 24 hours
-setInterval(tweetProjectOfTheDay, 86400000);
+setInterval(tweetProjectOfTheDay, 60000 * 1440);
