@@ -47,8 +47,8 @@ var retweet = function () {
 };
 
 retweet();
-// retweet every 6 minutes
-setInterval(retweet, 360000);
+// retweet every 10 minutes
+setInterval(retweet, 600000);
 
 // FAVORITE ==============================
 // find a random tweet using querySring and 'favorite' it

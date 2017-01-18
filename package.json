@@ -1,6 +1,6 @@
 {
   "name": "100daysofcodebot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "#100daysofcode bot",
   "main": "bot.js",
   "scripts": {
