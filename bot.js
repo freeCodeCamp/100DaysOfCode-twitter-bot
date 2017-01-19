@@ -209,4 +209,3 @@ var sentimentBot = function() {
   });
 };
 sentimentBot();
-setInterval(sentimentBot, 960000);
