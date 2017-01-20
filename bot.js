@@ -1,9 +1,11 @@
 /**
  * DEPENDENCIES
  */
+"use strict"; // c9 use
 var twit = require('twit');
 var config = require('./config');
 var sentiment = require('./sentiment');
+var db = require('./db')
 
 var Twitter = new twit(config);
 
@@ -99,8 +101,8 @@ userStream.on('follow', followed);
 function followed(event) {
   console.log('Follow Event now RUNNING');
   // get USER's twitter handler (screen name)
-  var name = event.source.name,
-    screenName = event.source.screen_name;
+  var name = event.source.name
+  var screenName = event.source.screen_name
   // function that replies back to every USER who followed for the first time
   tweetNow('@' + screenName + ' Thank you. What are you working on today?');
 }
@@ -199,6 +201,10 @@ var sentimentBot = function() {
         // get a random quote
         var phrase = sentiment.randomQuote()
         var screen_name = tweet.user.screen_name
+        
+        db.put(screen_name + '_encourage', 'true', function (err) {
+          if (err) return console.log('Errmergerd: ', err)
+        })
 
         // tweet a random encouragement phrase
         tweetNow('@' + screen_name + ' ' + phrase)
