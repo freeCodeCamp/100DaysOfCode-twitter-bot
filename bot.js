@@ -16,14 +16,14 @@ console.log('Welcome to #100DaysOfCode');
 
 // RETWEET
 // find latest tweets according to #100daysofcode
-var retweet = function () {
+var retweet = function() {
   var params = {
     q: queryString,
     result_type: 'recent',
     lang: 'en'
   };
   // for more parameters options, see: https://dev.twitter.com/rest/reference/get/search/tweets
-  Twitter.get('search/tweets', params, function (err, data) {
+  Twitter.get('search/tweets', params, function(err, data) {
     // if no errors
     if (!err) {
       // grab ID of tweet to retweet
@@ -31,11 +31,12 @@ var retweet = function () {
       // Tell Twitter to retweet
       Twitter.post('statuses/retweet/:id', {
         id: retweetId
-      }, function (err, response) {
+      }, function(err, response) {
         // if error while retweet
         if (err) {
           console.log('While Retweet. ERROR!...Maybe Duplicate Tweet');
-        } else {
+        }
+        else {
           console.log('Retweet. SUCCESS!');
         }
 
@@ -54,7 +55,7 @@ setInterval(retweet, 1200000);
 
 // FAVORITE ==============================
 // find a random tweet using querySring and 'favorite' it
-var favoriteTweet = function () {
+var favoriteTweet = function() {
   var params = {
     q: queryString,
     result_type: 'recent',
@@ -63,15 +64,17 @@ var favoriteTweet = function () {
   // for more parameters, see: https://dev.twitter.com/rest/reference
 
   // find a tweet
-  Twitter.get('search/tweets', params, function (err, data) {
+  Twitter.get('search/tweets', params, function(err, data) {
     // find tweets randomly
     var tweet = data.statuses;
-    var randomTweet = ranDom(tweet);    //pick a random tweet
+    var randomTweet = ranDom(tweet); //pick a random tweet
 
     //if random tweet is found
     if (typeof randomTweet != 'undefined') {
       // Tell Twitter to 'favorite' it
-      Twitter.post('favorites/create', { id: randomTweet.id_str }, function (err, response) {
+      Twitter.post('favorites/create', {
+        id: randomTweet.id_str
+      }, function(err, response) {
         // if error while 'favorite'
         if (err) {
           console.log('Cannot Favorite. ERROR!');
@@ -103,7 +106,7 @@ function followed(event) {
   // get USER's twitter handler (screen name)
   var name = event.source.name
   var screenName = event.source.screen_name
-  // function that replies back to every USER who followed for the first time
+    // function that replies back to every USER who followed for the first time
   tweetNow('@' + screenName + ' Thank you. What are you working on today?');
 }
 
@@ -112,7 +115,7 @@ function tweetNow(tweetTxt) {
   var tweet = {
     status: tweetTxt
   };
-  Twitter.post('statuses/update', tweet, function (err, data, response) {
+  Twitter.post('statuses/update', tweet, function(err, data, response) {
     if (err) {
       console.log("Cannot Reply to Follower. ERROR!");
     }
@@ -131,9 +134,10 @@ const hashtagStream = Twitter.stream('statuses/filter', {
 var checkIfFirstOrLastDay = function() {
   hashtagStream.on('tweet', (tweet) => {
     if (checkIfLastDay(tweet)) {
-        console.log(`Sending a congrats to @${tweet.user.screen_name}`)
-        tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
-    } else if (checkIfFirstDay(tweet)) {
+      console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+      tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
+    }
+    else if (checkIfFirstDay(tweet)) {
       console.log(`Sending a congrats to @${tweet.user.screen_name}`)
       tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
     };
@@ -166,7 +170,7 @@ function checkIfLastDay(tweet) {
   }
 }
 
-function checkTweetForText(tweetText, value){
+function checkTweetForText(tweetText, value) {
   return tweetText.toLowerCase().indexOf(value) > -1 && tweetText.toLowerCase().indexOf('100daysofcode') > -1
 }
 
@@ -178,19 +182,19 @@ function ranDom(arr) {
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
-   track: '#100DaysOfCode'
+  track: '#100DaysOfCode'
 });
 
 var sentimentBot = function() {
   hashtagStream2.on('tweet', (tweet) => {
     console.log(`Sentiment Bot Running`)
-    //  Setup the http call
+      //  Setup the http call
     var httpCall = sentiment.init()
 
     // Don't do anything if it's the bot tweet
     if (tweet.user.screen_name == '_100DaysOfCode') return;
 
-    httpCall.send("txt=" + tweet.text).end(function (result) {
+    httpCall.send("txt=" + tweet.text).end(function(result) {
 
       var sentim = result.body.result.sentiment;
       var confidence = parseFloat(result.body.result.confidence);
@@ -201,17 +205,46 @@ var sentimentBot = function() {
         // get a random quote
         var phrase = sentiment.randomQuote()
         var screen_name = tweet.user.screen_name
-        
-        db.put(screen_name + '_encourage', 'true', function (err) {
-          if (err) return console.log('Errmergerd: ', err)
-        })
 
-        // tweet a random encouragement phrase
-        tweetNow('@' + screen_name + ' ' + phrase)
+        // Check key isn't in db already, key being the screen_name
+        db.get(screen_name, function(err, value) {
+
+          if (typeof(value) !== 'undefined') {
+            console.log('ALREADY IN DB USER ', screen_name);
+          }
+          else {
+            // Put a user name and that they have been encouraged 
+            db.put(screen_name, 'encourage', function(err) {
+              if (err) return console.log('Ooops!', err) // some kind of I/O error
+
+              console.log('LOGGED USER ', screen_name)
+
+              // tweet a random encouragement phrase
+              tweetNow('@' + screen_name + ' ' + phrase)
+
+            })
+          }
+
+        })
 
       }
 
     });
   });
 };
+
 sentimentBot();
+
+var refreshDB = function() {
+  var fs = require('fs-extra')
+
+  fs.remove('./blacklistUsersDb', function(err) {
+    if (err) return console.error(err)
+
+    console.log('success!')
+  })
+}
+
+refreshDB()
+  // retweet every 24 hrs
+setInterval(refreshDB, 60000 * 1440)
