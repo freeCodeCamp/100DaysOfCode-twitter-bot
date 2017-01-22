@@ -50,8 +50,8 @@ var retweet = function () {
 };
 
 retweet();
-// retweet every 6 minutes
-setInterval(retweet, 360000);
+// retweet every 20 minutes
+setInterval(retweet, 1200000);
 
 // FAVORITE ==============================
 // find a random tweet using querySring and 'favorite' it
@@ -86,8 +86,8 @@ var favoriteTweet = function () {
 };
 // grab & 'favorite' a tweet ASAP program is running
 favoriteTweet();
-// 'favorite' a tweet every 12 minutes
-setInterval(favoriteTweet, 720000);
+// 'favorite' a tweet every 16 minutes
+setInterval(favoriteTweet, 960000);
 
 
 // STREAM API for interacting with a USER =======
@@ -129,15 +129,19 @@ const hashtagStream = Twitter.stream('statuses/filter', {
 });
 
 // Function that checks if day 1 or day 100
-hashtagStream.on('tweet', (tweet) => {
-  if (checkIfLastDay(tweet)) {
-    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
-    tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
-  } else if (checkIfFirstDay(tweet)) {
-    console.log(`Sending a congrats to @${tweet.user.screen_name}`)
-    tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
-  };
-})
+var checkIfFirstOrLastDay = function() {
+  hashtagStream.on('tweet', (tweet) => {
+    if (checkIfLastDay(tweet)) {
+        console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+        tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
+    } else if (checkIfFirstDay(tweet)) {
+      console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+      tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
+    };
+  });
+}
+checkIfFirstOrLastDay();
+setImmediate(checkIfFirstOrLastDay, 720000);
 
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
@@ -178,35 +182,40 @@ const hashtagStream2 = Twitter.stream('statuses/filter', {
    track: '#100DaysOfCode'
 });
 
-hashtagStream2.on('tweet', (tweet) => {
+var sentimentBot = function() {
+  hashtagStream2.on('tweet', (tweet) => {
+    console.log(`Sentiment Bot Running`)
+    //  Setup the http call
+    var httpCall = sentiment.init()
 
-  //  Setup the http call
-  var httpCall = sentiment.init()
+    // Don't do anything if it's the bot tweet
+    if (tweet.user.screen_name == '_100DaysOfCode') return;
 
-  // Don't do anything if it's the bot tweet
-  if (tweet.user.screen_name == '_100DaysOfCode') return;
+    httpCall.send("txt=" + tweet.text).end(function (result) {
 
-  httpCall.send("txt=" + tweet.text).end(function (result) {
+      var sentim = result.body.result.sentiment;
+      var confidence = parseFloat(result.body.result.confidence);
 
-    var sentim = result.body.result.sentiment;
-    var confidence = parseFloat(result.body.result.confidence);
+      // if sentiment is Negative and the confidence is above 75%
+      if (sentim == 'Negative' && confidence >= 75) {
 
-    // if sentiment is Negative and the confidence is above 75%
-    if (sentim == 'Negative' && confidence >= 75) {
+        // get a random quote
+        var phrase = sentiment.randomQuote()
+        var screen_name = tweet.user.screen_name
 
-      // get a random quote
-      var phrase = sentiment.randomQuote()
-      var screen_name = tweet.user.screen_name
+        // tweet a random encouragement phrase
+        tweetNow('@' + screen_name + ' ' + phrase)
 
-      // tweet a random encouragement phrase
-      tweetNow('@' + screen_name + ' ' + phrase)
+      }
 
-    }
-
+    });
   });
  })
- 
- // PROJECT OF THE DAY TWEET
+};
+
+sentimentBot();
+
+// PROJECT OF THE DAY TWEET
 function tweetProjectOfTheDay() {
 
   var projectOfTheDay = ura([
@@ -230,4 +239,3 @@ function tweetProjectOfTheDay() {
 tweetProjectOfTheDay();
 // post sample project every 24 hours
 setInterval(tweetProjectOfTheDay, 60000 * 1440);
-
