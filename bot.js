@@ -203,7 +203,7 @@ function tweetProjectOfTheDay() {
 // post random project of the day
 tweetProjectOfTheDay();
 // post sample project every 24 hours
-setInterval(tweetProjectOfTheDay, 60000 * 1440);
+setInterval(tweetProjectOfTheDay, 86400000);
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
@@ -272,4 +272,4 @@ var refreshDB = function() {
 
 refreshDB()
 // retweet every 24 hrs
-setInterval(refreshDB, 60000 * 1440)
+setInterval(refreshDB, 86400000)
