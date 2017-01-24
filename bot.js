@@ -5,6 +5,7 @@
 var twit = require('twit');
 var config = require('./config');
 var sentiment = require('./sentiment');
+var ura = require('unique-random-array');
 var db = require('./db')
 
 var Twitter = new twit(config);
@@ -179,6 +180,30 @@ function ranDom(arr) {
   return arr[index];
 }
 
+// PROJECT OF THE DAY TWEET
+function tweetProjectOfTheDay() {
+
+  var projectOfTheDay = ura([
+    'Build a Random Quote Machine',
+    'Show the Local Weather',
+    'Build a Wikipedia Viewer',
+    'Use the Twitch.tv JSON API'
+  ]);
+
+  var message = 'Looking for inspitation for your #100DaysOfCode? Why not try ' + projectOfTheDay()
+
+  Twitter.post('statuses/update', {
+    status: message
+  }, function(err, data, response) {
+    console.log('POST PROJECT OF THE DAY!')
+  })
+
+}
+
+// post random project of the day
+tweetProjectOfTheDay();
+// post sample project every 24 hours
+setInterval(tweetProjectOfTheDay, 60000 * 1440);
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
@@ -246,5 +271,5 @@ var refreshDB = function() {
 }
 
 refreshDB()
-  // retweet every 24 hrs
+// retweet every 24 hrs
 setInterval(refreshDB, 60000 * 1440)
