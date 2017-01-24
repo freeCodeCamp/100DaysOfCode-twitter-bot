@@ -26,7 +26,8 @@
   "license": "MIT",
   "dependencies": {
     "twit": "^2.2.4",
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "unique-random-array": "*"
   },
   "repository": {
     "type": "git",

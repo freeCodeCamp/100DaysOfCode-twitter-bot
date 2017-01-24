@@ -210,7 +210,6 @@ var sentimentBot = function() {
 
     });
   });
- })
 };
 
 sentimentBot();
@@ -235,7 +234,7 @@ function tweetProjectOfTheDay() {
 
 }
 
-// post random project of the day 
+// post random project of the day
 tweetProjectOfTheDay();
 // post sample project every 24 hours
 setInterval(tweetProjectOfTheDay, 60000 * 1440);
