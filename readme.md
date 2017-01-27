@@ -20,6 +20,8 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 ## #100DaysOfCode tweet has negative sentiment, tweets back encouragement 
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
+## Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day 
+
 ## Pre-requisites
 
 This bot uses the `twit` npm package to manipulate tweets and streams and communicate with Twitter API. Please refer [documentation](https://github.com/ttezel/twit) to make substantial changes.
