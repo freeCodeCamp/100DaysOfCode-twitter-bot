@@ -28,8 +28,8 @@ This bot uses the `twit` npm package to manipulate tweets and streams and commun
 
 You can help out by:
 
-- Solving exisiting issues
-- Enhancing the bot adding more functionalities (see issues)
+- Solving exisiting [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
+- Enhancing the bot adding more functionalities [(see issues)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
 - Pointing out bugs/errors
 
 For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
