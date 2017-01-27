@@ -271,5 +271,5 @@ var refreshDB = function() {
 }
 
 refreshDB()
-// retweet every 24 hrs
+// refresh every 24 hrs
 setInterval(refreshDB, 86400000)
