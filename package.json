@@ -4,8 +4,7 @@
   "description": "#100daysofcode bot",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "#100daysofcode",
@@ -21,7 +20,7 @@
   },
   "author": "aman mittal <@amanhimself>",
   "bugs": {
-    "url": "https://github.com/amandeepmittal/100DaysOfCode/issues"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": "MIT",
   "dependencies": {
@@ -33,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amandeepmittal/100DaysOfCode.git"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
-  "homepage": "https://github.com/amandeepmittal/100DaysOfCode"
+  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode"
 }

@@ -4,9 +4,9 @@
 "use strict"; // c9 use
 var twit = require('twit');
 var config = require('./config');
-var sentiment = require('./sentiment');
+var sentiment = require('../sentiment');
 var ura = require('unique-random-array');
-var db = require('./db')
+var db = require('../db')
 
 var Twitter = new twit(config);
 
