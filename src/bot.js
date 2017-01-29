@@ -7,6 +7,7 @@ var ura = require('unique-random-array')
 var config = require('./config')
 var sentiment = require('./helpers/sentiment')
 var db = require('./helpers/db')
+var strings = require('./helpers/strings')
 
 var Twitter = new twit(config)
 
@@ -21,7 +22,7 @@ var queryString = '#100DaysOfCode, #100daysofcode'
 console.log('Welcome to #100DaysOfCode')
 
 // RETWEET
-// find latest tweets according to #100daysofcode
+// find latest tweets according to #100DaysOfCode
 var retweet = function() {
   var params = {
     q: queryString,
@@ -187,14 +188,9 @@ function ranDom(arr) {
 // PROJECT OF THE DAY TWEET
 function tweetProjectOfTheDay() {
 
-  var projectOfTheDay = ura([
-    'Build a Random Quote Machine',
-    'Show the Local Weather',
-    'Build a Wikipedia Viewer',
-    'Use the Twitch.tv JSON API'
-  ])
+  var projectOfTheDay = ura(strings.projectOfTheDay)
 
-  var message = 'Looking for inspitation for your #100DaysOfCode? Why not try ' + projectOfTheDay()
+  var message = 'Todays #100DaysOfCode #ProjectOfTheDay, ' + projectOfTheDay()
 
   Twitter.post('statuses/update', {
     status: message
@@ -207,7 +203,7 @@ function tweetProjectOfTheDay() {
 // post random project of the day
 tweetProjectOfTheDay()
 // post sample project every 24 hours
-setInterval(tweetProjectOfTheDay, 86400000)
+setInterval(tweetProjectOfTheDay, 1000 * 60 * 60 * 24)
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
