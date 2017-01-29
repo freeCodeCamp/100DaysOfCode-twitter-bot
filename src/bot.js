@@ -10,6 +10,11 @@ var db = require('./helpers/db')
 
 var Twitter = new twit(config)
 
+// Frequency in minutes
+var retweetFrequency = 20
+var favoriteFrequency = 16
+var firstOrLastDayFrequency = 12
+
 var queryString = '#100DaysOfCode, #100daysofcode'
 
 // Console Welcome Msg
@@ -51,8 +56,8 @@ var retweet = function() {
 }
 
 retweet()
-// retweet every 20 minutes
-setInterval(retweet, 1200000)
+// retweet every x minutes
+setInterval(retweet, 1000 * 60 * retweetFrequency)
 
 // FAVORITE ==============================
 // find a random tweet using querySring and 'favorite' it
@@ -89,9 +94,8 @@ var favoriteTweet = function() {
 }
 // grab & 'favorite' a tweet ASAP program is running
 favoriteTweet()
-// 'favorite' a tweet every 16 minutes
-setInterval(favoriteTweet, 960000)
-
+// 'favorite' a tweet every x minutes
+setInterval(favoriteTweet, 1000 * 60 * favoriteFrequency)
 
 // STREAM API for interacting with a USER =======
 // set up a user stream
@@ -145,7 +149,7 @@ var checkIfFirstOrLastDay = function() {
   })
 }
 checkIfFirstOrLastDay()
-setImmediate(checkIfFirstOrLastDay, 720000)
+setImmediate(checkIfFirstOrLastDay, 1000 * 60 * firstOrLastDayFrequency)
 
 // NOTE: String elements in firstDay & lastDay are case insensitive
 
@@ -268,4 +272,4 @@ var refreshDB = function() {
 
 refreshDB()
 // refresh every 24 hrs
-setInterval(refreshDB, 86400000)
+setInterval(refreshDB, 1000 * 60 * 60 * 24)
