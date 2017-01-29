@@ -246,14 +246,10 @@ var sentimentBot = function() {
 
               // tweet a random encouragement phrase
               tweetNow('@' + screen_name + ' ' + phrase)
-
             })
           }
-
         })
-
       }
-
     })
   })
 }
