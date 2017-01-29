@@ -21,7 +21,7 @@ sentiment.init = function () {
 
 sentiment.randomQuote = function () {
   // Get content from file
- var contents = fs.readFileSync("quotes.json");
+ var contents = fs.readFileSync("./src/helpers/quotes.json");
 
  // Define to JSON type
  var jsonContent = JSON.parse(contents);
