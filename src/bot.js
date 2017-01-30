@@ -16,7 +16,7 @@ var retweetFrequency = 20
 var favoriteFrequency = 16
 var firstOrLastDayFrequency = 12
 
-var queryString = '#100DaysOfCode, #100daysofcode'
+var queryString = '#100DaysOfCode, #100daysofcode, #301DaysOfCode, #301daysofcode'
 
 // Console Welcome Msg
 console.log('Welcome to #100DaysOfCode')
@@ -190,7 +190,7 @@ function tweetProjectOfTheDay() {
 
   var projectOfTheDay = ura(strings.projectOfTheDay)
 
-  var message = 'Todays #100DaysOfCode #ProjectOfTheDay, ' + projectOfTheDay()
+  var message = 'Todays #100DaysOfCode / #301DaysOfCode #ProjectOfTheDay, ' + projectOfTheDay()
 
   Twitter.post('statuses/update', {
     status: message
@@ -207,7 +207,7 @@ setInterval(tweetProjectOfTheDay, 1000 * 60 * 60 * 24)
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
-  track: '#100DaysOfCode'
+  track: '#100DaysOfCode, #301DaysOfCode'
 })
 
 var sentimentBot = function() {
