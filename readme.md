@@ -1,7 +1,5 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
-[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
 
 ![](src/images/Screen Shot 2016-11-21 at 12.45.11 PM.png)
@@ -49,4 +47,4 @@ Simply do:
 
 BSD 3-Clause License
 
-Copyright (c) 2017, Free Code Camp. All rights reserved.
+Copyright (c) 2017, freeCodeCamp. All rights reserved.
