@@ -1,5 +1,6 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/) 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
@@ -44,6 +45,8 @@ Simply do:
 - Create a pull request
 
 --- 
+
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ### License
 
