@@ -190,7 +190,7 @@ function tweetProjectOfTheDay() {
 
   var projectOfTheDay = ura(strings.projectOfTheDay)
 
-  var message = 'Todays #100DaysOfCode / #301DaysOfCode #ProjectOfTheDay, ' + projectOfTheDay()
+  var message = 'Todays #100DaysOfCode #301DaysOfCode #ProjectOfTheDay, ' + projectOfTheDay()
 
   Twitter.post('statuses/update', {
     status: message
@@ -207,7 +207,7 @@ setInterval(tweetProjectOfTheDay, 1000 * 60 * 60 * 24)
 
 // SENTIMENT DETECTION =================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
-  track: '#100DaysOfCode, #301DaysOfCode'
+  track: '#100DaysOfCode'
 })
 
 var sentimentBot = function() {
