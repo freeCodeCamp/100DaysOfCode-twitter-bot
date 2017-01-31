@@ -16,7 +16,7 @@ var retweetFrequency = 20
 var favoriteFrequency = 16
 var firstOrLastDayFrequency = 12
 
-var queryString = '#100DaysOfCode OR #100daysofcode OR #301DaysOfCode OR #301daysofcode'
+var queryString = '#100DaysOfCode OR #100daysofcode OR #301DaysOfCode'
 
 // Console Welcome Msg
 console.log('Welcome to #100DaysOfCode')
@@ -144,7 +144,7 @@ var checkIfFirstOrLastDay = function() {
       tweetNow(`WOOT! You did it @${tweet.user.screen_name}! Party Time!`)
     }
     else if (checkIfFirstDay(tweet)) {
-      console.log(`Sending a congrats to @${tweet.user.screen_name}`)
+      console.log('Sending a congrats to @${tweet.user.screen_name}')
       tweetNow(`Congrats on your first day @${tweet.user.screen_name}! Keep it up!`)
     }
   })
