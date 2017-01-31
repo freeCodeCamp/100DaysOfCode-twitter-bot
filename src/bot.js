@@ -16,7 +16,7 @@ var retweetFrequency = 20
 var favoriteFrequency = 16
 var firstOrLastDayFrequency = 12
 
-var queryString = '#100DaysOfCode, #100daysofcode, #301DaysOfCode, #301daysofcode'
+var queryString = '#100DaysOfCode OR #100daysofcode OR #301DaysOfCode OR #301daysofcode'
 
 // Console Welcome Msg
 console.log('Welcome to #100DaysOfCode')
