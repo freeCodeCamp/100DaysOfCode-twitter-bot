@@ -200,8 +200,8 @@ function tweetProjectOfTheDay() {
 
 }
 
-// post random project of the day
-tweetProjectOfTheDay()
+// // post random project of the day
+// tweetProjectOfTheDay()
 // post sample project every 24 hours
 setInterval(tweetProjectOfTheDay, 1000 * 60 * 60 * 24)
 
