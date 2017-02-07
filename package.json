@@ -24,7 +24,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dotenv": "2.0.0",
     "fs-extra": "2.0.0",
     "level": "*",
     "twit": "2.2.5",
