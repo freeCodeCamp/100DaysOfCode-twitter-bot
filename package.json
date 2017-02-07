@@ -24,11 +24,12 @@
   },
   "license": "MIT",
   "dependencies": {
+    "dotenv": "2.0.0",
     "fs-extra": "2.0.0",
+    "level": "*",
     "twit": "2.2.5",
-    "unirest": "0.5.1",
     "unique-random-array": "*",
-    "level": "*"
+    "unirest": "0.5.1"
   },
   "repository": {
     "type": "git",

@@ -46,3 +46,6 @@ gen
 
 # VSCODE
 .vscode
+
+# Environment Variables
+.env
