@@ -6,7 +6,7 @@
 * access_token_secret
 */
 
-require('dotenv').config()
+require('dotenv').config({path: '../.env'})
 
 module.exports = {
   consumer_key: process.env.CONSUMER_KEY,
