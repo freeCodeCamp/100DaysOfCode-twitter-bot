@@ -12,7 +12,7 @@ var strings = require('./helpers/strings')
 var Twitter = new twit(config)
 
 // Frequency in minutes
-var retweetFrequency = 20
+var retweetFrequency = 30
 var favoriteFrequency = 30
 var firstOrLastDayFrequency = 15
 
