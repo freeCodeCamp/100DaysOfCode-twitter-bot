@@ -1,13 +1,16 @@
 /*
-* TWITTER APP CONFIGURATION
-* consumer_key
-* consumer_secret
-* access_token
-* access_token_secret
-*/
+ * TWITTER APP CONFIGURATION
+ * consumer_key
+ * consumer_secret
+ * access_token
+ * access_token_secret
+ */
+
+require('dotenv').config()
+
 module.exports = {
-  consumer_key       : 'OPVPonGhy0xxiXJoMDDgzk9rr',
-  consumer_secret    : 'aBNYfBwUjkytAeOPtuIaJcZPuvsRck0DhMqQ615Et71KItFZwp',
-  access_token       : '744776302591303680-fdydcRgorbFTv6uZjorJ6kGx631ft06',
-  access_token_secret: 'nz024mf9DYXPq2g6s8NbMlrGIX0QlM8mZUWE0UhavuYQg'
-};
+consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
+}

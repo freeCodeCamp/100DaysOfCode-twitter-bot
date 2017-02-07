@@ -4,7 +4,8 @@
   "description": "#100daysofcode bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "standard && node index.js"
   },
   "keywords": [
     "#100daysofcode",
@@ -24,15 +25,20 @@
   },
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "fs-extra": "^2.0.0",
+    "level": "*",
     "twit": "^2.2.4",
-    "unirest": "^0.5.1",
     "unique-random-array": "*",
-    "level": "*"
+    "unirest": "^0.5.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
-  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode"
+  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "standard": "*"
+  }
 }
