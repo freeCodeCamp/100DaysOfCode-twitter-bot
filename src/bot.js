@@ -13,8 +13,8 @@ var Twitter = new twit(config)
 
 // Frequency in minutes
 var retweetFrequency = 20
-var favoriteFrequency = 16
-var firstOrLastDayFrequency = 12
+var favoriteFrequency = 30
+var firstOrLastDayFrequency = 15
 
 var queryString = '#100DaysOfCode OR #100daysofcode OR #301DaysOfCode'
 
