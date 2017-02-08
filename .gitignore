@@ -48,3 +48,4 @@ gen
 .vscode
 
 # Environment Variables
+*.env
