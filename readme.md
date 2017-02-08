@@ -38,10 +38,33 @@ You can help out by:
 For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
 
 #### If You Can Make the Change
-Simply do:
-- Fork the repository
+What you will need:
+- Your _own_ Twitter [account](https://twitter.com/signup) for testting your changes on
+- API Keys for Twitter and Sentiment
+  - Get your Twitter API keys [here](https://apps.twitter.com/app/new)
+  - Get your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3)
+- [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/network) the repository
+- Add your API keys to the `.env` file:
+
+**Note** that the keys are not surrouonded by `''`
+```
+CONSUMER_KEY=Fw***********P9
+CONSUMER_SECRET=TD************Cq
+ACCESS_TOKEN=31**************UC
+ACCESS_TOKEN_SECRET=r0************S2
+SENTIMENT_KEY=Gj************lF
+```
+
+Stop tracking of the `.env` file so you dont push your keys back to GitHub:
+
+```
+$ git update-index --assume-unchanged .env
+```
+
+- Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
+- `npm start` to test, make sure it's not broken before you start :+1:
 - Make your suggested change
-- Make sure the code style looks similar to the existing code
+- Make sure the code style looks similar to the existing code, note that this project uses [standard](https://github.com/feross/standard)
 - Create a pull request
 
 --- 
