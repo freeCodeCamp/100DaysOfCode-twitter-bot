@@ -24,15 +24,19 @@
   },
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
-    "level": "*",
+    "level": "^1.6.0",
     "twit": "2.2.5",
-    "unique-random-array": "*",
+    "unique-random-array": "1.0.0",
     "unirest": "0.5.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
-  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode"
+  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
 }
