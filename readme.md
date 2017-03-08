@@ -7,21 +7,21 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 
 ![](src/images/Screen Shot 2016-11-21 at 12.45.11 PM.png)
 
-# What can this bot do?
+## What can this bot do?
 
-## Retweet & Like a Tweet
+### Retweet & Like a Tweet
 ![](src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
 
-## When Followed, automated reply to the user
+### When Followed, automated reply to the user
 ![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
-## Congratulating user on starting/finishing #100DaysOfCode Challenge
+### Congratulating user on starting/finishing #100DaysOfCode Challenge
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
-## #100DaysOfCode tweet has negative sentiment, tweets back encouragement 
+### #100DaysOfCode tweet has negative sentiment, tweets back encouragement 
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
-## Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day 
+### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day 
 
 ## Pre-requisites
 
@@ -75,4 +75,4 @@ $ git update-index --assume-unchanged .env
 
 BSD 3-Clause License
 
-Copyright (c) 2017, Free Code Camp. All rights reserved.
+Copyright (c) 2017, freeCodeCamp. All rights reserved.
