@@ -1,7 +1,5 @@
-/**
- * DEPENDENCIES
- */
-'use strict' // c9 use
+// Dependencies
+'use strict' 
 var Twit = require('twit')
 var ura = require('unique-random-array')
 var config = require('./config')
@@ -16,13 +14,14 @@ var retweetFrequency = 30
 var favoriteFrequency = 30
 var firstOrLastDayFrequency = 15
 
+// Track Hashtags in queryString
 var queryString = '#100DaysOfCode OR #100daysofcode OR #301DaysOfCode'
 
-// Console Welcome Msg
+// Console Welcome Message
 console.log('Welcome to #100DaysOfCode')
 
-// RETWEET
-// find latest tweets according to #100DaysOfCode
+// RETWEET ======================================
+// find latest tweets
 var retweet = function () {
   var params = {
     q: queryString,
@@ -51,12 +50,10 @@ var retweet = function () {
     }
   })
 }
-
-retweet()
 // retweet every x minutes
 setInterval(retweet, 1000 * 60 * retweetFrequency)
 
-// FAVORITE ==============================
+// FAVORITE ======================================
 // find a random tweet using querySring and 'favorite' it
 var favoriteTweet = function () {
   var params = {
@@ -88,12 +85,11 @@ var favoriteTweet = function () {
     }
   })
 }
-// grab & 'favorite' a tweet ASAP program is running
-favoriteTweet()
 // 'favorite' a tweet every x minutes
 setInterval(favoriteTweet, 1000 * 60 * favoriteFrequency)
 
-// STREAM API for interacting with a USER =======
+// STREAM API  ===================================
+// to interact with a User
 // set up a user stream
 var userStream = Twitter.stream('user')
 
@@ -103,7 +99,7 @@ userStream.on('follow', followed)
 
 // ...trigger the callback
 function followed (event) {
-  console.log('Follow Event now RUNNING')
+  console.log('Follow Event now running...')
   // get USER's twitter handler (screen name)
   var name = event.source.name
   var screenName = event.source.screen_name
@@ -178,7 +174,7 @@ function ranDom (arr) {
   return arr[index]
 }
 
-// PROJECT OF THE DAY TWEET
+// PROJECT OF THE DAY TWEET ==================================
 function tweetProjectOfTheDay () {
   var projectOfTheDay = ura(strings.projectOfTheDay)
 
@@ -196,19 +192,21 @@ function tweetProjectOfTheDay () {
 // post sample project every 24 hours
 setInterval(tweetProjectOfTheDay, 1000 * 60 * 60 * 24)
 
-// SENTIMENT DETECTION =================
+// SENTIMENT DETECTION ==================================
 const hashtagStream2 = Twitter.stream('statuses/filter', {
   track: '#100DaysOfCode'
 })
 
 var sentimentBot = function () {
   hashtagStream2.on('tweet', (tweet) => {
-    console.log(`Sentiment Bot Running`)
+    console.log(`Sentiment Bot Running...`)
       //  Setup the http call
     var httpCall = sentiment.init()
 
     // Don't do anything if it's the bot tweet
-    if (tweet.user.screen_name === '_100DaysOfCode') return
+    if (tweet.user.screen_name === '_100DaysOfCode') {
+      return
+    }
 
     httpCall.send('txt=' + tweet.text).end(function (result) {
       var sentim = result.body.result.sentiment
