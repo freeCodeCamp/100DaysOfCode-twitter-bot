@@ -1,11 +1,10 @@
 {
   "name": "100daysofcodebot",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "#100daysofcode bot",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "#100daysofcode",
@@ -19,17 +18,25 @@
     "node": "~6.1.0",
     "npm": "~.3.8.6"
   },
-  "author": "aman mittal <@amanhimself>",
+  "author": "aman mittal <@amandeepmittal>",
   "bugs": {
-    "url": "https://github.com/amandeepmittal/100DaysOfCode/issues"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": "MIT",
   "dependencies": {
-    "twit": "^2.2.4"
+    "dotenv": "^4.0.0",
+    "fs-extra": "2.0.0",
+    "level": "^1.6.0",
+    "twit": "2.2.5",
+    "unique-random-array": "1.0.0",
+    "unirest": "0.5.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amandeepmittal/100DaysOfCode.git"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
-  "homepage": "https://github.com/amandeepmittal/100DaysOfCode"
+  "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
 }
