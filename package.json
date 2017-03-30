@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
-  "license": "MIT",
+  "license": " BSD 3-Clause License",
   "dependencies": {
     "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
