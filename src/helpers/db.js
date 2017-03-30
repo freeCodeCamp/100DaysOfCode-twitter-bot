@@ -1,7 +1,9 @@
-var level = require('level')
-var path = require('path')
+'use strict'
 
-var dbPath = process.env.DB_PATH || path.join(__dirname, 'blacklistUsersDb')
-var db = level(dbPath)
+const level = require('level')
+const path = require('path')
 
-module.exports = db
+const dbPath = process.env.DB_PATH || path.join(__dirname, 'blacklistUsersDb')
+const db = level(dbPath)
+
+module.exports = db; 
