@@ -24,7 +24,6 @@
   },
   "license": " BSD 3-Clause License",
   "dependencies": {
-    "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
     "level": "^1.6.0",
     "twit": "2.2.5",
