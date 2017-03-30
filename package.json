@@ -38,5 +38,70 @@
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
   "devDependencies": {
     "standard": "^8.6.0"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Scott Spence",
+      "email": "spences10apps@gmail.com",
+      "url": "https://github.com/spences10",
+      "contributions": 18,
+      "additions": 975,
+      "deletions": 845,
+      "hireable": true
+    },
+    {
+      "name": "Aman Mittal",
+      "email": "amandeepmittal@live.com",
+      "url": "https://github.com/amandeepmittal",
+      "contributions": 53,
+      "additions": 553,
+      "deletions": 214,
+      "hireable": true
+    },
+    {
+      "name": "Benjamin Spak",
+      "email": "benspak@gmail.com",
+      "url": "https://github.com/benjaminspak",
+      "contributions": 2,
+      "additions": 25,
+      "deletions": 3,
+      "hireable": true
+    },
+    {
+      "name": "Stephanie Zeng",
+      "email": null,
+      "url": "https://github.com/stephanie56",
+      "contributions": 3,
+      "additions": 9,
+      "deletions": 7,
+      "hireable": true
+    },
+    {
+      "name": "Ilyes Hammadi",
+      "email": "hammadiilyesahmed@gmail.com",
+      "url": "https://github.com/Ilyes-Hammadi",
+      "contributions": 2,
+      "additions": 106,
+      "deletions": 2,
+      "hireable": true
+    },
+    {
+      "name": "Quincy Larson",
+      "email": null,
+      "url": "https://github.com/QuincyLarson",
+      "contributions": 1,
+      "additions": 9,
+      "deletions": 17,
+      "hireable": null
+    },
+    {
+      "name": "Jamie King",
+      "email": null,
+      "url": "https://github.com/king0120",
+      "contributions": 4,
+      "additions": 74,
+      "deletions": 35,
+      "hireable": true
+    }
+  ]
 }
