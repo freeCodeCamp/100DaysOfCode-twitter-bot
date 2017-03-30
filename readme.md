@@ -10,15 +10,19 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 ## Bot Features
 
 #### Retweet & Like a Tweet
-![](src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
+
+![Screenshot1](src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
 
 #### When Followed, automated reply to the user
-![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
+
+![Screenshot2](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
 #### Congratulating user on starting/finishing #100DaysOfCode Challenge
+
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
 #### #100DaysOfCode tweet has negative sentiment, tweets back encouragement
+
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
 #### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day
@@ -48,8 +52,9 @@ What you will need:
 - [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/network) the repository
 - Add your API keys to the `.env` file:
 
-**Note** that the keys are not surrouonded by `''`
-```
+**Note** that the keys are not surrounded by `''`
+
+```shell
 CONSUMER_KEY=Fw***********P9
 CONSUMER_SECRET=TD************Cq
 ACCESS_TOKEN=31**************UC
@@ -57,11 +62,13 @@ ACCESS_TOKEN_SECRET=r0************S2
 SENTIMENT_KEY=Gj************lF
 ```
 
-Stop tracking of the `.env` file so you dont push your keys back to GitHub:
+Stop tracking of the `.env` file so you don't push your keys back to GitHub:
 
-```
+```shell
 $ git update-index --assume-unchanged .env
 ```
+
+**OR** Simply add `.env` file to `.gitignore` file to untrack it.
 
 - Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
 - `npm start` to test, make sure it's not broken before you start :+1:
