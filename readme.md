@@ -1,27 +1,29 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/) 
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
 
 ![](src/images/Screen Shot 2016-11-21 at 12.45.11 PM.png)
 
-## What can this bot do?
+## Bot Features
 
-### Retweet & Like a Tweet
+#### Retweet & Like a Tweet
 ![](src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
 
-### When Followed, automated reply to the user
+#### When Followed, automated reply to the user
 ![](src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
 
-### Congratulating user on starting/finishing #100DaysOfCode Challenge
+#### Congratulating user on starting/finishing #100DaysOfCode Challenge
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
-### #100DaysOfCode tweet has negative sentiment, tweets back encouragement 
+#### #100DaysOfCode tweet has negative sentiment, tweets back encouragement
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
-### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day 
+#### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day
+
+---
 
 ## Pre-requisites
 
@@ -31,7 +33,7 @@ This bot uses the `twit` npm package to manipulate tweets and streams and commun
 
 You can help out by:
 
-- Solving exisiting [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
+- Solving existing [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
 - Enhancing the bot adding more functionalities [(see issues)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
 - Pointing out bugs/errors
 
@@ -67,7 +69,7 @@ $ git update-index --assume-unchanged .env
 - Make sure the code style looks similar to the existing code, note that this project uses [standard](https://github.com/feross/standard)
 - Create a pull request
 
---- 
+---
 
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
