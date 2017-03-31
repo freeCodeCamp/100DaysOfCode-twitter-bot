@@ -5,17 +5,17 @@
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
 
-![](/src/images/Screen Shot 2016-11-21 at 12.45.11 PM.png)
+![Imgur](http://i.imgur.com/Ufo9BLY.png)
 
 ## Bot Features
 
 #### Retweet & Like a Tweet
 
-![Screenshot1](/src/images/Screen Shot 2016-11-21 at 12.46.34 PM.png)
+![Screenshot1](http://i.imgur.com/V35iX70.png)
 
 #### When Followed, automated reply to the user
 
-![Screenshot2](/src/images/Screen Shot 2016-11-21 at 12.46.25 PM.png)
+![Screenshot2](http://i.imgur.com/0LAvqUd.png)
 
 #### Congratulating user on starting/finishing #100DaysOfCode Challenge
 
