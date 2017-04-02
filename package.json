@@ -1,6 +1,6 @@
 {
   "name": "100daysofcodebot",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "contributor": "0.1.25",
     "fs-extra": "2.0.0",
     "level": "*",
+    "node-schedule": "1.2.1",
     "twit": "2.2.5",
     "unique-random-array": "1.0.0",
     "unirest": "0.5.1"
