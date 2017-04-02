@@ -3,6 +3,7 @@
 console.log('Welcome #100DaysOfCode Twitter Bot')
 
 // Dependencies
+const schedule = require('node-schedule')
 const twit = require('twit')
 const config = require('./config')
 const T = new twit(config)
@@ -29,14 +30,19 @@ setInterval(favorite, frequency)
 const userStream = T.stream('user')
 userStream.on('follow', reply)
 
-// Project of Day
-setInterval(projectOfTheDay, 1000 * 60 * 60 * 23)
+// Use cron-job to schedule Project of the day
+const rule = new schedule.RecurrenceRule()
+rule.dayOfWeek = [0, new schedule.Range(1,6)]
+rule.hour = 11
+rule.minute = 59
+
+var job = schedule.scheduleJob(rule, () => {
+  console.log('Cron Job runs successfully')
+  projectOfTheDay()
+})
 
 // Refresh LevelDB every 24 hrs
 setInterval(refreshDb, 1000 * 60 * 60 * 24)
-
-
-
 
 // ABANDONED API(s)
 

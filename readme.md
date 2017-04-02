@@ -27,6 +27,8 @@ Helping Developers who code and participate in [#100DaysOfCode](https://twitter.
 
 #### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day
 
+#### Uses Cron job to tweet Project of the Day
+
 ---
 
 ## Pre-requisites
