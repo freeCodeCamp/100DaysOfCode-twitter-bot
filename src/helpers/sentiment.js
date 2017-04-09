@@ -1,17 +1,18 @@
+'use strict';
+
 const unirest = require('unirest');
-const fs = require("fs");
+const fs = require('fs');
 
 /*
   Get a new API key at https://market.mashape.com/vivekn/sentiment-3
 */
 
-
 // Sentiment 3 Mashape API key
-var apiKey = "QqtO3XbGhFmshEmKBxy58FqKLvG3p1rx61ijsnaHTstuRd3jp0"
+const apiKey = require('../config')
 
-var sentiment = {}
+const sentiment = {}
 
-sentiment.init = function () {
+sentiment.init = () => {
   return unirest.post("https://community-sentiment.p.mashape.com/text/")
   .header("X-Mashape-Key", apiKey)
   .header("Content-Type", "application/x-www-form-urlencoded")
@@ -21,13 +22,13 @@ sentiment.init = function () {
 
 sentiment.randomQuote = function () {
   // Get content from file
- var contents = fs.readFileSync("./src/helpers/quotes.json");
+ let contents = fs.readFileSync("./src/helpers/quotes.json");
 
  // Define to JSON type
- var jsonContent = JSON.parse(contents);
+ let jsonContent = JSON.parse(contents);
 
  // Random number
- var randomIndex = Math.floor(Math.random() * jsonContent.quotes.length)
+ let randomIndex = Math.floor(Math.random() * jsonContent.quotes.length)
 
  return jsonContent.quotes[randomIndex]
 }

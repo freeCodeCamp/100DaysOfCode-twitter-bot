@@ -1,7 +1,7 @@
 {
   "name": "100daysofcodebot",
-  "version": "1.0.2",
-  "description": "#100daysofcode bot",
+  "version": "2.1.0",
+  "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -19,26 +19,88 @@
     "node": "~6.1.0",
     "npm": "~.3.8.6"
   },
-  "author": "aman mittal <@amanhimself>",
+  "author": "Amandeepmittal <@amandeepmittal>",
   "bugs": {
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
-  "license": "MIT",
+  "license": " BSD 3-Clause License",
   "dependencies": {
-    "dotenv": "^4.0.0",
-    "fs-extra": "^2.0.0",
+    "contributor": "0.1.25",
+    "fs-extra": "2.0.0",
     "level": "*",
-    "twit": "^2.2.4",
-    "unique-random-array": "*",
-    "unirest": "^0.5.1"
+    "node-schedule": "1.2.1",
+    "twit": "2.2.5",
+    "unique-random-array": "1.0.0",
+    "unirest": "0.5.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
-  "devDependencies": {
-    "dotenv": "^4.0.0",
-    "standard": "*"
-  }
+  "contributors": [
+    {
+      "name": "Jamie King",
+      "email": null,
+      "url": "https://github.com/king0120",
+      "contributions": 4,
+      "additions": 74,
+      "deletions": 35,
+      "hireable": true
+    },
+    {
+      "name": "Benjamin Spak",
+      "email": "benspak@gmail.com",
+      "url": "https://github.com/benjaminspak",
+      "contributions": 2,
+      "additions": 25,
+      "deletions": 3,
+      "hireable": true
+    },
+    {
+      "name": "Aman Mittal",
+      "email": "amandeepmittal@live.com",
+      "url": "https://github.com/amandeepmittal",
+      "contributions": 58,
+      "additions": 663,
+      "deletions": 254,
+      "hireable": true
+    },
+    {
+      "name": "Scott Spence",
+      "email": "spences10apps@gmail.com",
+      "url": "https://github.com/spences10",
+      "contributions": 18,
+      "additions": 975,
+      "deletions": 845,
+      "hireable": true
+    },
+    {
+      "name": "Quincy Larson",
+      "email": null,
+      "url": "https://github.com/QuincyLarson",
+      "contributions": 1,
+      "additions": 9,
+      "deletions": 17,
+      "hireable": null
+    },
+    {
+      "name": "Stephanie Zeng",
+      "email": null,
+      "url": "https://github.com/stephanie56",
+      "contributions": 3,
+      "additions": 9,
+      "deletions": 7,
+      "hireable": true
+    },
+    {
+      "name": "Ilyes Hammadi",
+      "email": "hammadiilyesahmed@gmail.com",
+      "url": "https://github.com/Ilyes-Hammadi",
+      "contributions": 2,
+      "additions": 106,
+      "deletions": 2,
+      "hireable": true
+    }
+  ]
 }
