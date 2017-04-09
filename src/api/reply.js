@@ -5,7 +5,7 @@ const paramters = require('./parameters')
 const uniqueRandom = require('unique-random-array')
 const twit = require('twit')
 
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 // function: tweets back to user who followed
 function tweetNow(text) {
