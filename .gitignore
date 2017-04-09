@@ -54,3 +54,5 @@ gen
 src/helpers/blacklistUsersDb
 
 .package.json
+
+.env
