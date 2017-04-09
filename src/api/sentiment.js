@@ -4,12 +4,13 @@ const sentiment = require('../helpers/sentiment')
 const config = require('../config')
 const twit = require('twit')
 const T = new twit(config.twitter)
+const db = require('../helpers/db')
 
 const hashtagStream2 = T.stream('statuses/filter', {
-  track: '#100DaysOfCode'
+  track: config.queryString
 })
 
-const sentimentBot =  () => {
+const sentimentBot = () => {
   hashtagStream2.on('tweet', (tweet) => {
     console.log(`Sentiment Bot Running`)
 
@@ -34,7 +35,7 @@ const sentimentBot =  () => {
         // Check key isn't in db already, key being the screen_name
         db.get(screen_name, (err, value) => {
 
-          if (typeof(value) !== 'undefined') {
+          if (typeof (value) !== 'undefined') {
             console.log('ALREADY IN DB USER ', screen_name)
           } else {
             // Put a user name and that they have been encouraged
@@ -51,6 +52,19 @@ const sentimentBot =  () => {
         })
       }
     })
+  })
+}
+
+function tweetNow(text) {
+  let tweet = {
+    status: text
+  }
+
+  T.post('statuses/update', tweet, (err, data, response) => {
+    if (err) {
+      console.log('ERROR: ', err)
+    }
+    console.log('SUCCESS: Replied to Follower')
   })
 }
 

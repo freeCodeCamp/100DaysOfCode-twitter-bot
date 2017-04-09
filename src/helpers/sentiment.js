@@ -8,7 +8,7 @@ const fs = require('fs');
 */
 
 // Sentiment 3 Mashape API key
-const apiKey = require('../config')
+const apiKey = require('../config').sentiment_api_key
 
 const sentiment = {}
 

@@ -44,9 +44,10 @@ var job = schedule.scheduleJob(rule, () => {
 // Refresh LevelDB every 24 hrs
 setInterval(refreshDb, 1000 * 60 * 60 * 24)
 
-// ABANDONED API(s)
+// Track sentiment
+sentimentBot()
 
-// sentimentBot()
+// ABANDONED API(s)
 
 // Congratulation Messages for Day 1 & Day 100 ========
 // const hashtagStream = T.stream('statuses/filter', {
