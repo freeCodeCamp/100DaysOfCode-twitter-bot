@@ -1,14 +1,14 @@
 'use strict';
 
-const unirest = require('unirest');
-const fs = require('fs');
+const unirest = require('unirest')
+const fs = require('fs')
 
 /*
   Get a new API key at https://market.mashape.com/vivekn/sentiment-3
 */
 
 // Sentiment 3 Mashape API key
-const apiKey = require('../config')
+const apiKey = require('../config').sentiment_api_key
 
 const sentiment = {}
 
@@ -19,13 +19,12 @@ sentiment.init = () => {
   .header("Accept", "application/json")
 }
 
-
 sentiment.randomQuote = function () {
   // Get content from file
- let contents = fs.readFileSync("./src/helpers/quotes.json");
+ let contents = fs.readFileSync("./src/helpers/quotes.json")
 
  // Define to JSON type
- let jsonContent = JSON.parse(contents);
+ let jsonContent = JSON.parse(contents)
 
  // Random number
  let randomIndex = Math.floor(Math.random() * jsonContent.quotes.length)

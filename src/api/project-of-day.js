@@ -5,7 +5,7 @@ var projectsList = require('../helpers/projects-list')
 const uniqueRandom = require('unique-random-array')
 const twit = require('twit')
 
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 const projectOfTheDay = () => {
   let projectOfDay = uniqueRandom(projectsList.projectOfTheDay)
