@@ -46,15 +46,28 @@ You can help out by:
 For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
 
 #### If You Can Make the Change
+
 What you will need:
+
 - Your _own_ Twitter [account](https://twitter.com/signup) for testting your changes on
 - API Keys for Twitter and Sentiment
   - Get your Twitter API keys [here](https://apps.twitter.com/app/new)
   - Get your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3)
 - [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/network) the repository
-- Add API keys to `src/config.js` file
+- Add API keys to `.env` file, your `.env` file should liik something like this:
+
+```
+TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
+TWITTER_CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxkFNNj1H107PFv1mvWwEM6CZH0fjymV
+TWITTER_ACCESS_TOKEN=xxxxxxxxx-xxxxxxxxxxxxxxxxxxxxecKpi90bFhdsGG2N7iII
+TWITTER_ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxZAU8wNKAPU8Qz2c0PhOo43cGO
+SENTIMENT_KEY=xxxxxxxxxxxxxxxxxxxx7Ev80Pacp1h0c2kjsnMVVrG5m9MNlF
+QUERY_STRING=#someTestHashTag
+TWITTER_USERNAME=YourTestTwitterAccountName
+```
+
 - Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
-- `npm start` to test, make sure it's not broken before you start :+1:
+- `npm/yarn start` to test, make sure it's not broken before you start :+1:
 - Make your suggested change
 - Make sure the code style looks similar to the existing code, note that this project uses [standard](https://github.com/feross/standard)
 - Create a pull request
