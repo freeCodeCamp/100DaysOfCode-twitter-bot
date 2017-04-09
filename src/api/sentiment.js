@@ -3,7 +3,7 @@
 const sentiment = require('../helpers/sentiment')
 const config = require('../config')
 const twit = require('twit')
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 const hashtagStream2 = T.stream('statuses/filter', {
   track: '#100DaysOfCode'
@@ -53,5 +53,7 @@ const sentimentBot =  () => {
     })
   })
 }
+
+
 
 module.exports = sentimentBot
