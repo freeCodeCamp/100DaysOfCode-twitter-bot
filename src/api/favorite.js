@@ -5,7 +5,7 @@ const paramters = require('./parameters')
 const random = require('../helpers/random')
 const twit = require('twit')
 
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 const favorite = () => {
   let params = paramters

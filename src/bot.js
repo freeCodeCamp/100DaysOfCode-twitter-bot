@@ -6,7 +6,7 @@ console.log('Welcome #100DaysOfCode Twitter Bot')
 const schedule = require('node-schedule')
 const twit = require('twit')
 const config = require('./config')
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 // Import API functions
 const retweet = require('./api/retweet')
