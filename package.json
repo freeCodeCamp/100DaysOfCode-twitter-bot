@@ -4,7 +4,8 @@
   "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "standard && node index.js"
   },
   "keywords": [
     "#100daysofcode",
