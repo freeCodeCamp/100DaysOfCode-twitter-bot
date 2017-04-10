@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --coverage",
-    "dev": "jest --coverage && node index.js && nodemon -e"
+    "test": "snyk test && jest --coverage",
+    "dev": "jest --coverage && node index.js && nodemon -e",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "#100daysofcode",
@@ -33,11 +35,12 @@
     "contributor": "0.1.25",
     "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
-    "level": "*",
+    "level": "1.6.0",
     "node-schedule": "1.2.1",
     "twit": "2.2.5",
     "unique-random-array": "1.0.0",
-    "unirest": "0.5.1"
+    "unirest": "0.5.1",
+    "snyk": "^1.28.0"
   },
   "repository": {
     "type": "git",
@@ -108,5 +111,6 @@
       "deletions": 2,
       "hireable": true
     }
-  ]
+  ],
+  "snyk": true
 }
