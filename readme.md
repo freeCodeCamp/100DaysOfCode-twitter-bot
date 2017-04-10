@@ -67,7 +67,7 @@ TWITTER_USERNAME=YourTestTwitterAccountName
 ```
 
 - Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
-- `npm/yarn start` to test, make sure it's not broken before you start :+1:
+- `npm/yarn test` the tests will check all keys are available before you start :+1:
 - Make your suggested change
 - Make sure the code style looks similar to the existing code, note that this project uses [standard](https://github.com/feross/standard)
 - Create a pull request
