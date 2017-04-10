@@ -57,3 +57,4 @@ src/helpers/blacklistUsersDb
 
 # Other files
 *.env
+/coverage/
