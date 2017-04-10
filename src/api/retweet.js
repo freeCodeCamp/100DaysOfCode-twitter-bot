@@ -4,7 +4,7 @@ const config = require('../config')
 const paramters = require('./parameters')
 const twit = require('twit')
 
-const T = new twit(config)
+const T = new twit(config.twitter)
 
 const retweet = () => {
   let params = paramters

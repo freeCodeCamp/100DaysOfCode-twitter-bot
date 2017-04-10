@@ -3,10 +3,11 @@
 const sentiment = require('../helpers/sentiment')
 const config = require('../config')
 const twit = require('twit')
-const T = new twit(config)
+const T = new twit(config.twitter)
+const db = require('../helpers/db')
 
 const hashtagStream2 = T.stream('statuses/filter', {
-  track: '#100DaysOfCode'
+  track: config.queryString
 })
 
 const sentimentBot =  () => {
@@ -51,6 +52,15 @@ const sentimentBot =  () => {
         })
       }
     })
+  })
+}
+
+function tweetNow(text) {
+  let tweet = {status: text}
+
+  T.post('statuses/update', tweet, (err, data, response) => {
+    if (err) {console.log('ERROR: ', err)}
+    console.log('SUCCESS: Replied to Follower')
   })
 }
 

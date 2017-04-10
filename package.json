@@ -1,6 +1,6 @@
 {
   "name": "100daysofcodebot",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "license": " BSD 3-Clause License",
   "dependencies": {
     "contributor": "0.1.25",
+    "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
     "level": "*",
     "node-schedule": "1.2.1",
