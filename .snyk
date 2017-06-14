@@ -6,6 +6,9 @@ ignore:
     - contributor > request > qs:
         reason: None given
         expires: '2017-06-03T06:03:30.370Z'
+    - contributor > request > qs:
+        reason: None given
+        expires: '2017-07-14T09:38:10.099Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:hawk:20160119':
