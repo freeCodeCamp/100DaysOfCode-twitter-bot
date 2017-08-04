@@ -5,15 +5,26 @@ ignore:
   'npm:qs:20170213':
     - contributor > request > qs:
         reason: None given
-        expires: '2017-06-03T06:03:30.370Z'
+        expires: '2017-09-03T05:46:31.975Z'
     - contributor > request > qs:
         reason: None given
         expires: '2017-07-14T09:38:10.099Z'
+  'npm:http-signature:20150122':
+    - contributor > request > http-signature:
+        reason: None given
+        expires: '2017-09-03T05:46:31.975Z'
+  'npm:tunnel-agent:20170305':
+    - unirest > request > tunnel-agent:
+        reason: None given
+        expires: '2017-09-03T05:46:31.975Z'
+    - contributor > request > tunnel-agent:
+        reason: 'no patch, no upgrade'
+        expires: '2017-09-03T05:46:31.975Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:hawk:20160119':
     - contributor > request > hawk:
-        patched: '2017-05-04T06:02:15.020Z'
+        patched: '2017-08-04T05:45:22.919Z'
   'npm:request:20160119':
     - contributor > request:
-        patched: '2017-05-04T06:02:15.020Z'
+        patched: '2017-08-04T05:45:22.919Z'
