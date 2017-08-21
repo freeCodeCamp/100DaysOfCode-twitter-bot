@@ -19,7 +19,7 @@ Thank you for contributing!
 
 ### About this work
 
-I came up with the idea of an imposter syndrome disclaimer for project READMEs while working on my 2016 talks for [OSCON](https://conferences.oreilly.com/oscon/oscon-tx-2016/public/schedule/speaker/230023) and [PyCon](https://www.youtube.com/watch?v=6Uj746j9Heo). A goal was to share how leaders, mentors, and maintainers could become more accessible, welcoming collaborators with junior developers. Being explicitly welcoming and providing clear contribution guidelines is a powerful way to encourage others to contribute to your work. 
+I came up with the idea of an imposter syndrome disclaimer for project READMEs while working on my 2016 talks for [OSCON](https://conferences.oreilly.com/oscon/oscon-tx-2016/public/schedule/speaker/230023) and [PyCon](https://www.youtube.com/watch?v=6Uj746j9Heo). A goal was to share how leaders, mentors, and maintainers could become more accessible, welcoming collaborators with junior developers. Being explicitly welcoming and providing clear contribution guidelines is a powerful way to encourage others to contribute to your work.
 
 ### Examples
 
