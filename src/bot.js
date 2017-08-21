@@ -1,4 +1,4 @@
-'use strict'
+'use strict' // c9 use
 
 console.log('Welcome #100DaysOfCode Twitter Bot')
 
