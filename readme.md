@@ -49,7 +49,7 @@ For above option(s), please create an issue so it can be addressed. New to GitHu
 
 What you will need:
 
-- Your _own_ Twitter [account](https://twitter.com/signup) for testting your changes on
+- Your _own_ Twitter [account](https://twitter.com/signup) for testing your changes on
 - API Keys for Twitter and Sentiment
   - Get your Twitter API keys [here](https://apps.twitter.com/app/new)
   - Get your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3)
