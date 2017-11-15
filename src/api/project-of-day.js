@@ -9,8 +9,9 @@ const T = new twit(config.twitter)
 
 const projectOfTheDay = () => {
   let projectOfDay = uniqueRandom(projectsList.projectOfTheDay)
-  let tweet = "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay " + projectOfDay()
-  T.post('statuses/update', {status: tweet}, (err, data, response) => {
+  let tweet =
+    "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay " + projectOfDay()
+  T.post('statuses/update', { status: tweet }, (err, data, response) => {
     console.log('SUCCESS: Project of the Day: ' + tweet)
   })
 }
