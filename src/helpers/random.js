@@ -1,6 +1,6 @@
 'use strict'
 
-const random = (arr) => {
+const random = arr => {
   var index = Math.floor(Math.random() * arr.length)
   return arr[index]
 }
