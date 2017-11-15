@@ -8,7 +8,8 @@
     "test": "snyk test && jest --coverage",
     "dev": "jest --coverage && node index.js && nodemon -e",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "format": "prettier es5 --no-semi --single-quote --write src/**/*.js"
   },
   "keywords": [
     "#100daysofcode",
@@ -25,7 +26,8 @@
   "license": " BSD 3-Clause License",
   "devDependencies": {
     "jest-cli": "^19.0.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "prettier": "^1.8.2"
   },
   "dependencies": {
     "contributor": "0.1.25",

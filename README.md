@@ -1,6 +1,5 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
@@ -54,7 +53,7 @@ What you will need:
   - Get your Twitter API keys [here](https://apps.twitter.com/app/new)
   - Get your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3)
 - [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/network) the repository
-- Add API keys to `.env` file, your `.env` file should liik something like this:
+- Add API keys to `.env` file, your `.env` file should look something like this:
 
 ```
 TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
@@ -66,15 +65,13 @@ QUERY_STRING=#someTestHashTag
 TWITTER_USERNAME=YourTestTwitterAccountName
 ```
 
-- Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
+- Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag.
 - `npm/yarn test` the tests will check all keys are available before you start :+1:
-- Make your suggested change
-- Make sure the code style looks similar to the existing code, note that this project uses [standard](https://github.com/feross/standard)
+- Make your suggested change.
+- Make sure the code style is in line with the existing code, run: `npm run format` to apply preferred formatting.
 - Create a pull request
 
 ---
-
-[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ### License
 
