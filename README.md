@@ -1,6 +1,5 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
@@ -66,10 +65,10 @@ QUERY_STRING=#someTestHashTag
 TWITTER_USERNAME=YourTestTwitterAccountName
 ```
 
-- Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag
+- Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag.
 - `npm/yarn test` the tests will check all keys are available before you start :+1:
-- Make your suggested change
-- Make sure the code style looks similar to the existing code, run: `npm run format` to apply agreed formatting.
+- Make your suggested change.
+- Make sure the code style is in line with the existing code, run: `npm run format` to apply preferred formatting.
 - Create a pull request
 
 ---
