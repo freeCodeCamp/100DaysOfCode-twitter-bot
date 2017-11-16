@@ -21,7 +21,16 @@ const sentimentBot = () => {
     if (tweet.user.screen_name == '_100DaysOfCode') return
 
     httpCall.send('txt=' + tweet.text).end(result => {
-      let sentim = result.body.result.sentiment
+      // try
+      try {
+        let sentim = result.body.result.sentiment
+      } catch (err) {
+        // derp out
+        console.log('====================')
+        console.log(err)
+        console.log('====================')
+        return
+      }
       let confidence = parseFloat(result.body.result.confidence)
 
       // if sentiment is Negative and the confidence is above 75%
