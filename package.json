@@ -40,8 +40,7 @@
     "snyk": "^1.34.3",
     "twit": "2.2.5",
     "unified": "^6.1.6",
-    "unique-random-array": "1.0.0",
-    "unirest": "0.5.1"
+    "unique-random-array": "1.0.0"
   },
   "repository": {
     "type": "git",
