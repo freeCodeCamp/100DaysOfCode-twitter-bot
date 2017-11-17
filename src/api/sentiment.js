@@ -10,12 +10,15 @@ const unified = require('unified')
 const sentiment = require('retext-sentiment')
 const english = require('retext-english')
 
+const isReply = require('../helpers/isReply')
+
 const hashtagStream2 = T.stream('statuses/filter', {
   track: config.queryString
 })
 
 const sentimentBot = () => {
   hashtagStream2.on('tweet', tweet => {
+    if (isReply(tweet)) return
 
     const processor = unified()
       .use(english)
@@ -56,7 +59,7 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            tweetNow('@' + screen_name + ' ' + phrase)
+            // tweetNow('@' + screen_name + ' ' + phrase)
           })
         }
       })

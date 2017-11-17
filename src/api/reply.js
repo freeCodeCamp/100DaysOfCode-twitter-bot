@@ -21,6 +21,7 @@ function tweetNow(text) {
 
 // function: replies back to every USER who followed for the first time
 const reply = event => {
+  if (isReply(event)) return
   // get user's twitter handler/screen name
   let screenName = event.source.screen_name
 

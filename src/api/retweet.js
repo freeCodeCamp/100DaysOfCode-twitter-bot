@@ -13,6 +13,8 @@ const retweet = () => {
     // grab tweet ID to retweet
     let retweetId = data.statuses[0].id_str
 
+    if (isReply(data.statuses[0])) return
+    
     if (err) console.log('ERROR: Cannot Search Tweet!')
 
     T.post('statuses/retweet/:id', { id: retweetId }, (err, response) => {
