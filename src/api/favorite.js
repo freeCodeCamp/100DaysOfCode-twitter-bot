@@ -15,6 +15,8 @@ const favorite = () => {
     // pick a random tweet
     let randomTweet = random(tweet)
 
+    if (isReply(randomTweet)) return
+    
     if (typeof randomTweet != 'undefined') {
       T.post('favorite/create', { id: randomTweet.id_str }, (err, response) => {
         console.log('SUCCESS: Favorite')
