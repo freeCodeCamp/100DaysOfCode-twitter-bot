@@ -6,6 +6,8 @@ const twit = require('twit')
 
 const T = new twit(config.twitter)
 
+const isReply = require('../helpers/isReply')
+
 const retweet = () => {
   let params = paramters
 
