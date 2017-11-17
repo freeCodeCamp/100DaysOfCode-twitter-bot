@@ -27,18 +27,22 @@ const sentimentBot = () => {
 
     processor.run(tree, tweet.text)
 
+    console.log('====================}')
+    console.log(`POLARITY=${tree.data.polarity}`)
+    console.log(`VALENCE=${tree.data.valence}`)
     console.log('====================')
-    console.log(tree.data.polarity)
-    console.log(tree.data.valence)
-    console.log('====================')
 
-    // console.log(inspect(tree))
+    try {
+      let polarity = tree.data.polarity
+      let valence = tree.data.valence
+    } catch (err) {
+      // derp out
+      console.log(err)
+      return      
+    }
 
-    // // Setup the http call
-    // const httpCall = sentiment.init()
-
-    // // Don't do anything if it's the bot tweet
-    // if (tweet.user.screen_name == '_100DaysOfCode') return
+    // Don't do anything if it's the bot tweet
+    if (tweet.user.screen_name == '_100DaysOfCode') return
 
     // httpCall.send('txt=' + tweet.text).end(result => {
     //   console.log('====================')
