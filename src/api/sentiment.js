@@ -17,7 +17,6 @@ const hashtagStream2 = T.stream('statuses/filter', {
 
 const sentimentBot = () => {
   hashtagStream2.on('tweet', tweet => {
-    console.log(`Sentiment Bot Running`)
 
     const processor = unified()
       .use(english)
@@ -27,10 +26,11 @@ const sentimentBot = () => {
 
     processor.run(tree, tweet.text)
 
-    console.log('====================}')
-    console.log(`POLARITY=${tree.data.polarity}`)
-    console.log(`VALENCE=${tree.data.valence}`)
-    console.log('====================')
+    // console.log('====================}')
+    // console.log(`POLARITY=${tree.data.polarity}`)
+    // console.log(`VALENCE=${tree.data.valence}`)
+    // console.log(`TWEET TEXT=${tweet.text}`)
+    // console.log('====================')
 
     const polarity = tree.data.polarity
     const valence = tree.data.valence
@@ -38,8 +38,8 @@ const sentimentBot = () => {
     // Don't do anything if it's the bot tweet
     if (tweet.user.screen_name == '_100DaysOfCode') return
 
-    // if polarity is negative and polarity is >= -7
-    if (valence == 'negative' && polarity >= -7) {
+    // if polarity is negative and polarity is <= -2
+    if (valence == 'negative' && polarity <= -2) {
       // get a random quote
       const phrase = randomQuote()
       const screen_name = tweet.user.screen_name
@@ -57,7 +57,7 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            // tweetNow('@' + screen_name + ' ' + phrase)
+            tweetNow('@' + screen_name + ' ' + phrase)
           })
         }
       })
