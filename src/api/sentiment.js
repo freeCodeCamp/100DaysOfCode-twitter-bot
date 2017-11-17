@@ -9,7 +9,6 @@ const db = require('../helpers/db')
 const unified = require('unified')
 const sentiment = require('retext-sentiment')
 const english = require('retext-english')
-// const inspect = require('unist-util-inspect')
 
 const hashtagStream2 = T.stream('statuses/filter', {
   track: config.queryString
@@ -26,11 +25,11 @@ const sentimentBot = () => {
 
     processor.run(tree, tweet.text)
 
-    // console.log('====================}')
-    // console.log(`POLARITY=${tree.data.polarity}`)
-    // console.log(`VALENCE=${tree.data.valence}`)
-    // console.log(`TWEET TEXT=${tweet.text}`)
-    // console.log('====================')
+    console.log('====================}')
+    console.log(`POLARITY=${tree.data.polarity}`)
+    console.log(`VALENCE=${tree.data.valence}`)
+    console.log(`TWEET TEXT=${tweet.text}`)
+    console.log('====================')
 
     const polarity = tree.data.polarity
     const valence = tree.data.valence
@@ -57,7 +56,7 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            tweetNow('@' + screen_name + ' ' + phrase)
+            // tweetNow('@' + screen_name + ' ' + phrase)
           })
         }
       })

@@ -41,8 +41,7 @@
     "twit": "2.2.5",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0",
-    "unirest": "0.5.1",
-    "unist-util-inspect": "^4.1.1"
+    "unirest": "0.5.1"
   },
   "repository": {
     "type": "git",
