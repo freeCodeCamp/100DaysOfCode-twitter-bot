@@ -9,7 +9,7 @@ const db = require('../helpers/db')
 const unified = require('unified')
 const sentiment = require('retext-sentiment')
 const english = require('retext-english')
-const inspect = require('unist-util-inspect')
+// const inspect = require('unist-util-inspect')
 
 const hashtagStream2 = T.stream('statuses/filter', {
   track: config.queryString
@@ -28,10 +28,11 @@ const sentimentBot = () => {
     processor.run(tree, tweet.text)
 
     console.log('====================')
-    console.log(tree)
+    console.log(tree.data.polarity)
+    console.log(tree.data.valence)
     console.log('====================')
 
-    console.log(inspect(tree))
+    // console.log(inspect(tree))
 
     // // Setup the http call
     // const httpCall = sentiment.init()
