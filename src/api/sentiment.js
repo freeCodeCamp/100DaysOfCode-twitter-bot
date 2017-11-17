@@ -1,6 +1,6 @@
 'use strict'
 
-// const sentiment = require('../helpers/sentiment')
+const randomQuote = require('../helpers/randomQuote')
 const config = require('../config')
 const twit = require('twit')
 const T = new twit(config.twitter)
@@ -41,8 +41,8 @@ const sentimentBot = () => {
     // if polarity is negative and polarity is >= -7
     if (valence == 'negative' && polarity >= -7) {
       // get a random quote
-      // let phrase = sentiment.randomQuote()
-      let screen_name = tweet.user.screen_name
+      const phrase = randomQuote()
+      const screen_name = tweet.user.screen_name
 
       // Check key isn't in db already, key being the screen_name
       db.get(screen_name, (err, value) => {
@@ -57,7 +57,7 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            tweetNow('@' + screen_name + ' ' + phrase)
+            // tweetNow('@' + screen_name + ' ' + phrase)
           })
         }
       })
