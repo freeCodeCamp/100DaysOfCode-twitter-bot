@@ -18,7 +18,7 @@ const hashtagStream2 = T.stream('statuses/filter', {
 const sentimentBot = () => {
   hashtagStream2.on('tweet', tweet => {
     console.log(`Sentiment Bot Running`)
-    
+
     const processor = unified()
       .use(english)
       .use(sentiment)
@@ -32,61 +32,36 @@ const sentimentBot = () => {
     console.log(`VALENCE=${tree.data.valence}`)
     console.log('====================')
 
-    try {
-      let polarity = tree.data.polarity
-      let valence = tree.data.valence
-    } catch (err) {
-      // derp out
-      console.log(err)
-      return      
-    }
+    const polarity = tree.data.polarity
+    const valence = tree.data.valence
 
     // Don't do anything if it's the bot tweet
     if (tweet.user.screen_name == '_100DaysOfCode') return
 
-    // httpCall.send('txt=' + tweet.text).end(result => {
-    //   console.log('====================')
-    //   console.log(result.status)
-    //   console.log('====================')
-    //   console.log(result.headers)
-    //   console.log('====================')
-    //   console.log(result.body)
-    //   console.log('====================')
-    //   // try
-    //   try {
-    //     let sentim = result.body.result.sentiment
-    //     let confidence = parseFloat(result.body.result.confidence)
-    //   } catch (err) {
-    //     // derp out
-    //     console.log(err)
-    //     return
-    //   }
+    // if polarity is negative and polarity is >= -7
+    if (valence == 'negative' && polarity >= -7) {
+      // get a random quote
+      // let phrase = sentiment.randomQuote()
+      let screen_name = tweet.user.screen_name
 
-    //   // if sentiment is Negative and the confidence is above 75%
-    //   if (sentim == 'Negative' && confidence >= 75) {
-    //     // get a random quote
-    //     let phrase = sentiment.randomQuote()
-    //     let screen_name = tweet.user.screen_name
+      // Check key isn't in db already, key being the screen_name
+      db.get(screen_name, (err, value) => {
+        if (typeof value !== 'undefined') {
+          console.log('ALREADY IN DB USER ', screen_name)
+        } else {
+          // Put a user name and that they have been encouraged
+          db.put(screen_name, 'encourage', err => {
+            // some kind of I/O error
+            if (err) return console.log('Ooops!', err)
 
-    //     // Check key isn't in db already, key being the screen_name
-    //     db.get(screen_name, (err, value) => {
-    //       if (typeof value !== 'undefined') {
-    //         console.log('ALREADY IN DB USER ', screen_name)
-    //       } else {
-    //         // Put a user name and that they have been encouraged
-    //         db.put(screen_name, 'encourage', err => {
-    //           // some kind of I/O error
-    //           if (err) return console.log('Ooops!', err)
+            console.log('LOGGED USER: ', screen_name)
 
-    //           console.log('LOGGED USER: ', screen_name)
-
-    //           // tweet a random encouragement phrase
-    //           tweetNow('@' + screen_name + ' ' + phrase)
-    //         })
-    //       }
-    //     })
-    //   }
-    // })
+            // tweet a random encouragement phrase
+            tweetNow('@' + screen_name + ' ' + phrase)
+          })
+        }
+      })
+    }
   })
 }
 
