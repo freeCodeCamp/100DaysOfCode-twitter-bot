@@ -5,6 +5,8 @@ const paramters = require('./parameters')
 const uniqueRandom = require('unique-random-array')
 const twit = require('twit')
 
+const isReply = require('../helpers/isReply')
+
 const T = new twit(config.twitter)
 
 // function: tweets back to user who followed
