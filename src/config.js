@@ -17,6 +17,5 @@ module.exports = {
     retweet: process.env.TWITTER_RETWEET_RATE,
     favorite: process.env.TWITTER_FAVORITE_RATE
   },
-  sentiment_api_key: process.env.SENTIMENT_KEY,
   queryString: process.env.QUERY_STRING
 }
