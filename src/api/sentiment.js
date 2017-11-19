@@ -59,7 +59,7 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            // tweetNow('@' + screen_name + ' ' + phrase)
+            tweetNow(`@${screen_name} ${phrase}`)
           })
         }
       })

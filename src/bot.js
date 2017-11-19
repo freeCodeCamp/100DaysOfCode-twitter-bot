@@ -15,6 +15,7 @@ const reply = require('./api/reply')
 const projectOfTheDay = require('./api/project-of-day')
 const refreshDb = require('./api/refresh-db')
 const sentimentBot = require('./api/sentiment')
+const promoteSlackChannel = require('./api/promoteSlackChannel')
 
 // Frequency in minutes
 const frequency = 1000 * 60 * 30
@@ -39,6 +40,17 @@ rule.minute = 59
 var job = schedule.scheduleJob(rule, () => {
   console.log('Cron Job runs successfully')
   projectOfTheDay()
+})
+
+// Use cron-job to schedule promote slack channel
+const rule2 = new schedule.RecurrenceRule()
+rule2.dayOfWeek = [0, new schedule.Range(1,6)]
+rule2.hour = 6
+rule2.minute = 41
+
+var job2 = schedule.scheduleJob(rule2, () => {
+  console.log('Promote Slack Channel Cron Job runs successfully')
+  promoteSlackChannel()
 })
 
 // Refresh LevelDB every 24 hrs
