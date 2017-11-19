@@ -5,6 +5,8 @@ const paramters = require('./parameters')
 const uniqueRandom = require('unique-random-array')
 const twit = require('twit')
 
+const isReply = require('../helpers/isReply')
+
 const T = new twit(config.twitter)
 
 // function: tweets back to user who followed
@@ -21,6 +23,7 @@ function tweetNow(text) {
 
 // function: replies back to every USER who followed for the first time
 const reply = event => {
+  if (isReply(event)) return
   // get user's twitter handler/screen name
   let screenName = event.source.screen_name
 

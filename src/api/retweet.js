@@ -6,6 +6,8 @@ const twit = require('twit')
 
 const T = new twit(config.twitter)
 
+const isReply = require('../helpers/isReply')
+
 const retweet = () => {
   let params = paramters
 
@@ -13,6 +15,8 @@ const retweet = () => {
     // grab tweet ID to retweet
     let retweetId = data.statuses[0].id_str
 
+    if (isReply(data.statuses[0])) return
+    
     if (err) console.log('ERROR: Cannot Search Tweet!')
 
     T.post('statuses/retweet/:id', { id: retweetId }, (err, response) => {
