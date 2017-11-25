@@ -3,10 +3,11 @@
 const config = require('../config')
 const twit = require('twit')
 
-const T = new twit(config.twitter)
+const bot = new twit(config.twitterKeys)
 
 const promoteSlcakChannel = () => {
-  let tweet = `Here's the updated invite link to the official #100DaysOfCode slack channel!
+  let tweet = `
+  Here's the updated invite link to the official #100DaysOfCode slack channel!
   Join us to:
   
   1) get help
@@ -14,9 +15,10 @@ const promoteSlcakChannel = () => {
   3) connect
   4) discuss anything
   
-  https://t.co/yEbhWEtFsv`
-  
-  T.post('statuses/update', { status: tweet }, (err, data, response) => {
+  https://t.co/yEbhWEtFsv
+  `
+
+  bot.post('statuses/update', { status: tweet }, (err, data, response) => {
     console.log('SUCCESS: Promote the slack channel')
   })
 }

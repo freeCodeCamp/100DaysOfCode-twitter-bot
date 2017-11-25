@@ -5,24 +5,28 @@ const paramters = require('./parameters')
 const random = require('../helpers/random')
 const twit = require('twit')
 
-const T = new twit(config.twitter)
+const bot = new twit(config.twitterKeys)
 
 const isReply = require('../helpers/isReply')
 
 const favorite = () => {
   let params = paramters
 
-  T.get('search/tweets', params, (err, data) => {
+  bot.get('search/tweets', params, (err, data) => {
     let tweet = data.statuses
     // pick a random tweet
     let randomTweet = random(tweet)
 
     if (isReply(randomTweet)) return
-    
+
     if (typeof randomTweet != 'undefined') {
-      T.post('favorite/create', { id: randomTweet.id_str }, (err, response) => {
-        console.log('SUCCESS: Favorite')
-      })
+      bot.post(
+        'favorite/create',
+        { id: randomTweet.id_str },
+        (err, response) => {
+          console.log('SUCCESS: Favorite')
+        }
+      )
     }
   })
 }

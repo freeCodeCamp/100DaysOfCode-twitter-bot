@@ -7,13 +7,13 @@ const twit = require('twit')
 
 const isReply = require('../helpers/isReply')
 
-const T = new twit(config.twitter)
+const bot = new twit(config.twitterKeys)
 
 // function: tweets back to user who followed
 function tweetNow(text) {
   let tweet = { status: text }
 
-  T.post('statuses/update', tweet, (err, data, response) => {
+  bot.post('statuses/update', tweet, (err, data, response) => {
     if (err) {
       console.log('ERROR: Cannot Reply. Not a first time follower')
     }

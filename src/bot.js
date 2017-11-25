@@ -6,7 +6,7 @@ console.log('Welcome #100DaysOfCode Twitter Bot')
 const schedule = require('node-schedule')
 const twit = require('twit')
 const config = require('./config')
-const T = new twit(config.twitter)
+const bot = new twit(config.twitterKeys)
 
 // Import API functions
 const retweet = require('./api/retweet')
@@ -28,7 +28,7 @@ setInterval(retweet, frequency)
 setInterval(favorite, frequency)
 
 // Reply
-const userStream = T.stream('user')
+const userStream = bot.stream('user')
 userStream.on('follow', reply)
 
 // Use cron-job to schedule Project of the day
