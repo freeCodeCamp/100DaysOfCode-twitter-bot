@@ -8,6 +8,7 @@
     "test": "snyk test && jest --coverage",
     "dev": "jest --coverage && node index.js && nodemon -e",
     "snyk-protect": "snyk protect",
+    "snyk-wizard": "snyk wizard",
     "prepublish": "npm run snyk-protect",
     "format": "prettier es5 --no-semi --single-quote --write src/**/*.js"
   },
@@ -37,7 +38,7 @@
     "node-schedule": "1.2.1",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "^1.34.3",
+    "snyk": "1.38.1",
     "twit": "2.2.5",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0"
