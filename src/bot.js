@@ -21,11 +21,19 @@ const promoteSlackChannel = require('./api/promoteSlackChannel')
 const frequency = 1000 * 60 * 30
 const firstOrLastDayFrequency = 40
 
+// load up keywords
+const param = config.twitterConfig
+const trackWords = param.queryString.split(',')
+
+// use stream to track keywords
+const trackStream = bot.stream('statuses/filter', {
+  track: trackWords
+})
+
 // Retweet
-setInterval(retweet, frequency)
+trackStream.on('tweet', retweet)
 
 // Favorite
-setInterval(favorite, frequency)
 
 // Reply
 const userStream = bot.stream('user')

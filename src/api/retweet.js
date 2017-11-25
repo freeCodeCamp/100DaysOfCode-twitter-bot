@@ -1,30 +1,20 @@
-'use strict'
-
+const Twit = require('twit')
 const config = require('../config')
-const paramters = require('./parameters')
-const twit = require('twit')
 
-const bot = new twit(config.twitterKeys)
+const bot = new Twit(config.twitterKeys)
 
-const isReply = require('../helpers/isReply')
-
-const retweet = () => {
-  let params = paramters
-
-  bot.get('search/tweets', params, (err, data) => {
-    // grab tweet ID to retweet
-    let retweetId = data.statuses[0].id_str
-
-    if (isReply(data.statuses[0])) return
-
-    if (err) console.log('ERROR: Cannot Search Tweet!')
-
-    bot.post('statuses/retweet/:id', { id: retweetId }, (err, response) => {
-      if (err) {
-        console.log('ERROR: Retweet!')
-      }
-      console.log('SUCCESS: Retweet')
-    })
+const retweet = event => {
+  // console.log(JSON.stringify(event.lang))
+  // console.log(JSON.stringify(event))
+  // event.source.screen_name
+  // console.log('====================')
+  // console.log('RETWEET EVENT: ', event)
+  // console.log('====================')
+  bot.post('statuses/retweet/:id', { id: event.id_str }, (err, res) => {
+    if (err) {
+      console.log('RETWEET ERRORDERP: ', err.message)
+    }
+    console.log('RT SUCCESS: ', event.text)
   })
 }
 
