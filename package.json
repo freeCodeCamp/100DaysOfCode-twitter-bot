@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "snyk test && jest --coverage",
-    "dev": "jest --coverage && node index.js && nodemon -e",
+    "dev": "jest --coverage && nodemon index.js ",
     "snyk-protect": "snyk protect",
     "snyk-wizard": "snyk wizard",
     "prepublish": "npm run snyk-protect",
