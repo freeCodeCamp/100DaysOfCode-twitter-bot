@@ -77,8 +77,8 @@ const newTimeIn = date => {
 }
 
 // set timeOut 🙃
-const randomMin = param.tweetTimeOutMin
-const randomMax = param.tweetTimeOutMax
+const randomMin = parseInt(param.tweetTimeOutMin)
+const randomMax = parseInt(param.tweetTimeOutMax)
 
 const newTimeOut = date => {
   return moment(date)
