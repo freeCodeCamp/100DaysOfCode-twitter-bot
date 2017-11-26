@@ -10,7 +10,7 @@ const like = event => {
   // console.log('====================')
   // console.log('LIKE EVENT: ', event)
   // console.log('====================')
-  bot.post('favorite/create', { id: event.id_str }, (err, res) => {
+  bot.post('favorites/create', { id: event.id_str }, (err, data, response) => {
     if (err) {
       console.log('LIKE ERRORDERP: ', err.message)
     }
