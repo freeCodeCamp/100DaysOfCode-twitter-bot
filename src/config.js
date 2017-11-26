@@ -17,7 +17,8 @@ module.exports = {
   twitterConfig: {
     queryString: process.env.QUERY_STRING,
     username: process.env.TWITTER_USERNAME,
-    retweet: process.env.TWITTER_RETWEET_RATE,
-    favorite: process.env.TWITTER_FAVORITE_RATE
+    tweetTimeOutMin: process.env.TWEET_TIME_OUT_MIN,
+    tweetTimeOutMax: process.env.TWEET_TIME_OUT_MAX,
+    tweetQueueTime: 1000 * 60 * process.env.TWEET_QUEUE_TIME,
   }
 }
