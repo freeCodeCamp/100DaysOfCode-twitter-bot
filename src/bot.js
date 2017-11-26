@@ -63,7 +63,7 @@ function addTweetToQueue(e) {
     event: e // EVERYTHING!!!
   })
   console.log(`Item added to queue, current length=${tweets.length}`)
-  console.log(tweets)
+  // console.log(tweets)
 }
 
 // function to rerurn random
@@ -105,11 +105,11 @@ setInterval(() => {
     // console.log(time.timeOut)
     const itemTimeOut = new Date(item.timeOut).getTime()
     const currentTime = new Date().getTime()
-    // console.log('====================')
-    // console.log(`ITEM TIME OUT==== ${timeConverter(itemTimeOut)}`)
-    // console.log(`ITEM TIME NOW==== ${timeConverter(currentTime)}`)
-    // console.log(`POP IT OFF?====== ${itemTimeOut <= currentTime}`)
-    // console.log('====================')
+    console.log('====================')
+    console.log(`ITEM TIME OUT==== ${timeConverter(itemTimeOut)}`)
+    console.log(`ITEM TIME NOW==== ${timeConverter(currentTime)}`)
+    console.log(`POP IT OFF?====== ${itemTimeOut <= currentTime}`)
+    console.log('====================')
     if (itemTimeOut <= currentTime) {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
@@ -129,6 +129,10 @@ setInterval(() => {
   })
   return tweets
 }, queueTime)
+
+function timeConverter(UNIX_timestamp) {
+  return new Date(UNIX_timestamp).toISOString()
+}
 
 // Reply
 const userStream = bot.stream('user')
