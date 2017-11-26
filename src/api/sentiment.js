@@ -12,8 +12,12 @@ const english = require('retext-english')
 
 const isReply = require('../helpers/isReply')
 
+// load up keywords
+const param = config.twitterConfig
+const trackWords = param.queryString.split(',')
+
 const hashtagStream2 = bot.stream('statuses/filter', {
-  track: config.twitterConfig.queryString
+  track: trackWords
 })
 
 const sentimentBot = () => {
