@@ -1,7 +1,6 @@
 'use strict'
 
 const config = require('../config')
-const paramters = require('./parameters')
 const uniqueRandom = require('unique-random-array')
 const twit = require('twit')
 
