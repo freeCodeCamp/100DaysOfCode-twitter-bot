@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "snyk test && jest --coverage",
+    "test": "snyk test && jest --coverage --watch *.js",
     "dev": "jest --coverage && nodemon index.js ",
     "snyk-protect": "snyk protect",
     "snyk-wizard": "snyk wizard",
@@ -26,21 +26,21 @@
   },
   "license": " BSD 3-Clause License",
   "devDependencies": {
-    "jest-cli": "^19.0.2",
-    "nodemon": "^1.11.0",
+    "jest-cli": "21.2.1",
+    "nodemon": "1.12.1",
     "prettier": "^1.8.2"
   },
   "dependencies": {
     "contributor": "0.1.25",
     "dotenv": "^4.0.0",
-    "fs-extra": "2.0.0",
-    "level": "1.6.0",
-    "moment": "2.18.1",
+    "fs-extra": "4.0.2",
+    "level": "2.0.1",
+    "moment": "2.19.2",
     "node-schedule": "1.2.1",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.38.1",
-    "twit": "2.2.5",
+    "snyk": "1.51.0",
+    "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0"
   },
