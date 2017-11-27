@@ -1,4 +1,4 @@
-const config = require('./config').twitter
+const config = require('./config').twitterKeys
 
 test('returns config object', () => {
   expect(config.access_token).not.toBe(''),
