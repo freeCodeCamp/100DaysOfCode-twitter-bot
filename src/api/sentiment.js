@@ -1,11 +1,12 @@
-'use strict'
+const Twit = require('twit')
+const config = require('../config')
+
+const bot = new Twit(config.twitterKeys)
 
 const randomQuote = require('../helpers/randomQuote')
-const config = require('../config')
-const twit = require('twit')
-const bot = new twit(config.twitterKeys)
 const db = require('../helpers/db')
 
+// sentiment deps
 const unified = require('unified')
 const sentiment = require('retext-sentiment')
 const english = require('retext-english')
@@ -27,7 +28,9 @@ const sentimentBot = () => {
     const processor = unified()
       .use(english)
       .use(sentiment)
-
+console.log('====================')
+console.log(tweet)
+console.log('====================')
     const tree = processor.parse(tweet.text)
 
     processor.run(tree, tweet.text)
@@ -49,6 +52,7 @@ const sentimentBot = () => {
       // get a random quote
       const phrase = randomQuote()
       const screen_name = tweet.user.screen_name
+      const tweetId = tweet.id
 
       // Check key isn't in db already, key being the screen_name
       db.get(screen_name, (err, value) => {
@@ -63,7 +67,16 @@ const sentimentBot = () => {
             console.log('LOGGED USER: ', screen_name)
 
             // tweet a random encouragement phrase
-            tweetNow(`@${screen_name} ${phrase}`)
+            bot.post('statuses/update', {
+              status: `@${screen_name} ${phrase}`,
+              in_reply_to_status_id: tweetId
+            }, (err, data, response) => {
+              if (err) {
+                console.log(err)
+              } else {
+                console.log(`${data.text} tweeted!`)
+              }
+            })
           })
         }
       })
@@ -71,15 +84,16 @@ const sentimentBot = () => {
   })
 }
 
-function tweetNow(text) {
-  let tweet = { status: text }
-
-  bot.post('statuses/update', tweet, (err, data, response) => {
-    if (err) {
-      console.log('ERROR: ', err)
-    }
-    console.log('SUCCESS: Replied to Follower')
-  })
-}
-
 module.exports = sentimentBot
+
+
+// bot.post('statuses/update', {
+//   status: '@ScottDevTweets I reply to you yes!',
+//   in_reply_to_status_id: '860900406381211649'
+// }, (err, data, response) => {
+//   if (err) {
+//     console.log(err)
+//   } else {
+//     console.log(`${data.text} tweeted!`)
+//   }
+// })
