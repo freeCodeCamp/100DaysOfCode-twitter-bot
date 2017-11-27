@@ -1,5 +1,4 @@
-'use strict' 
-
+// hello 👋
 console.log('Welcome #100DaysOfCode Twitter Bot')
 
 // Dependencies
@@ -114,6 +113,8 @@ setInterval(() => {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
       // console.log(itemEvent)
+      // check sentiment
+      sentimentBot(itemEvent)     
       // coin flip to like or retweet
       if (Math.floor(Math.random() * 2)===0) {
         retweet(itemEvent)
@@ -163,7 +164,6 @@ var job2 = schedule.scheduleJob(rule2, () => {
 // Refresh LevelDB every 24 hrs
 setInterval(refreshDb, 1000 * 60 * 60 * 24)
 
-sentimentBot()
 
 // ABANDONED API(s)
 
