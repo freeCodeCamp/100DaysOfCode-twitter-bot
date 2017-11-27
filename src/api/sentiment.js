@@ -3,7 +3,7 @@
 const randomQuote = require('../helpers/randomQuote')
 const config = require('../config')
 const twit = require('twit')
-const T = new twit(config.twitter)
+const bot = new twit(config.twitterKeys)
 const db = require('../helpers/db')
 
 const unified = require('unified')
@@ -12,8 +12,12 @@ const english = require('retext-english')
 
 const isReply = require('../helpers/isReply')
 
-const hashtagStream2 = T.stream('statuses/filter', {
-  track: config.queryString
+// load up keywords
+const param = config.twitterConfig
+const trackWords = param.queryString.split(',')
+
+const hashtagStream2 = bot.stream('statuses/filter', {
+  track: trackWords
 })
 
 const sentimentBot = () => {
@@ -70,7 +74,7 @@ const sentimentBot = () => {
 function tweetNow(text) {
   let tweet = { status: text }
 
-  T.post('statuses/update', tweet, (err, data, response) => {
+  bot.post('statuses/update', tweet, (err, data, response) => {
     if (err) {
       console.log('ERROR: ', err)
     }
