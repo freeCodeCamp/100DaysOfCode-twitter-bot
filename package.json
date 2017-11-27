@@ -1,6 +1,6 @@
 {
   "name": "100daysofcodebot",
-  "version": "2.5.2",
+  "version": "2.4.0",
   "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
@@ -35,7 +35,6 @@
     "dotenv": "^4.0.0",
     "fs-extra": "2.0.0",
     "level": "1.6.0",
-    "moment": "2.18.1",
     "node-schedule": "1.2.1",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
