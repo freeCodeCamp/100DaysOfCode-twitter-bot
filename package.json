@@ -37,6 +37,7 @@
     "level": "2.0.1",
     "moment": "2.19.2",
     "node-schedule": "1.2.1",
+    "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
     "snyk": "1.51.0",
