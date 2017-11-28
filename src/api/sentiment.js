@@ -3,7 +3,8 @@ const config = require('../config')
 
 const bot = new Twit(config.twitterKeys)
 
-const randomQuote = require('../helpers/randomQuote')
+const quote = require('positivity-api')
+
 const db = require('../helpers/db')
 
 // sentiment deps
@@ -38,7 +39,7 @@ const sentimentBot = event => {
   // if polarity is negative and polarity is <= -2
   if (valence == 'negative' && polarity <= -2) {
     // get a random quote
-    const phrase = randomQuote()
+    const phrase = quote.random()
     const screen_name = event.user.screen_name
     const tweetId = event.id_str
   
