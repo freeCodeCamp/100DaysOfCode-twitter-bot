@@ -114,7 +114,11 @@ setInterval(() => {
       const itemEvent = item.event
       // console.log(itemEvent)
       const blacklist = config.twitterConfig.blacklist.split(',')
-      if (!blacklist.indexOf(event.screen_name) > -1) {
+      if (blacklist.indexOf(itemEvent.screen_name) > -1) {
+        console.log('====================')
+        console.log(`USER ${itemEvent.screen_name} IN BLACKLIST - DO NOTHING`)
+        console.log('====================')
+      } else {
         // check sentiment
         sentimentBot(itemEvent)     
         // coin flip to like or retweet
@@ -122,7 +126,7 @@ setInterval(() => {
           retweet(itemEvent)
         } else {
           like(itemEvent)
-        }
+        }        
       }
       // then remove it
       tweets.shift()
