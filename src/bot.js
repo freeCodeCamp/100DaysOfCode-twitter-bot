@@ -113,13 +113,16 @@ setInterval(() => {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
       // console.log(itemEvent)
-      // check sentiment
-      sentimentBot(itemEvent)     
-      // coin flip to like or retweet
-      if (Math.floor(Math.random() * 2)===0) {
-        retweet(itemEvent)
-      } else {
-        like(itemEvent)
+      const blacklist = config.twitterConfig.blacklist.split(',')
+      if (!blacklist.indexOf(event.screen_name) > -1) {
+        // check sentiment
+        sentimentBot(itemEvent)     
+        // coin flip to like or retweet
+        if (Math.floor(Math.random() * 2)===0) {
+          retweet(itemEvent)
+        } else {
+          like(itemEvent)
+        }
       }
       // then remove it
       tweets.shift()
