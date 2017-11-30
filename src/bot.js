@@ -112,11 +112,12 @@ setInterval(() => {
     if (itemTimeOut <= currentTime) {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
+      const userName = itemEvent.user.screen_name.toLowerCase()
       // console.log(itemEvent)
-      const blacklist = config.twitterConfig.blacklist.split(',')
-      if (blacklist.indexOf(itemEvent.screen_name) > -1) {
+      const blacklist = config.twitterConfig.blacklist.split(',')    
+      if (blacklist.indexOf(userName) > -1) {
         console.log('====================')
-        console.log(`USER ${itemEvent.screen_name} IN BLACKLIST - DO NOTHING`)
+        console.log(`USER ${userName} IN BLACKLIST - DO NOTHING`)
         console.log('====================')
       } else {
         // check sentiment
