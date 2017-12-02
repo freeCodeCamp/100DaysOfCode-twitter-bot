@@ -35,7 +35,7 @@
     "dotenv": "^4.0.0",
     "fs-extra": "4.0.2",
     "level": "2.0.1",
-    "moment": "2.19.2",
+    "moment": "2.19.3",
     "node-schedule": "1.2.1",
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
