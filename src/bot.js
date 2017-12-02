@@ -112,14 +112,22 @@ setInterval(() => {
     if (itemTimeOut <= currentTime) {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
+      const userName = itemEvent.user.screen_name.toLowerCase()
       // console.log(itemEvent)
-      // check sentiment
-      sentimentBot(itemEvent)     
-      // coin flip to like or retweet
-      if (Math.floor(Math.random() * 2)===0) {
-        retweet(itemEvent)
+      const blacklist = config.twitterConfig.blacklist.split(',')    
+      if (blacklist.indexOf(userName) > -1) {
+        console.log('====================')
+        console.log(`USER ${userName} IN BLACKLIST - DO NOTHING`)
+        console.log('====================')
       } else {
-        like(itemEvent)
+        // check sentiment
+        sentimentBot(itemEvent)     
+        // coin flip to like or retweet
+        if (Math.floor(Math.random() * 2)===0) {
+          retweet(itemEvent)
+        } else {
+          like(itemEvent)
+        }        
       }
       // then remove it
       tweets.shift()

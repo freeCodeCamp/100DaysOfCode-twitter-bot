@@ -35,14 +35,14 @@ const sentimentBot = event => {
 
   // Don't do anything if it's the bot tweet
   if (event.user.screen_name == '_100DaysOfCode') return
-  
+
   // if polarity is negative and polarity is <= -2
   if (valence == 'negative' && polarity <= -2) {
     // get a random quote
     const phrase = quote.random()
     const screen_name = event.user.screen_name
     const tweetId = event.id_str
-  
+
     // Check key isn't in db already, key being the screen_name
     db.get(screen_name, (err, value) => {
       if (typeof value !== 'undefined') {
@@ -52,9 +52,9 @@ const sentimentBot = event => {
         db.put(screen_name, 'encourage', err => {
           // some kind of I/O error
           if (err) return console.log('Ooops!', err)
-  
+
           console.log('LOGGED USER: ', screen_name)
-  
+
           // tweet a random encouragement phrase
           bot.post(
             'statuses/update',
