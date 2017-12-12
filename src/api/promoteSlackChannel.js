@@ -7,7 +7,8 @@ const bot = new twit(config.twitterKeys)
 
 const promoteSlcakChannel = () => {
   let tweet = `
-  Here's the updated invite link to the official #100DaysOfCode slack channel!
+  Here's the link to the official #100DaysOfCode slack channel!
+
   Join us to:
   
   1) get help
@@ -15,7 +16,7 @@ const promoteSlcakChannel = () => {
   3) connect
   4) discuss anything
   
-  https://t.co/yEbhWEtFsv
+  https://100xcode.slack.com/
   `
 
   bot.post('statuses/update', { status: tweet }, (err, data, response) => {
