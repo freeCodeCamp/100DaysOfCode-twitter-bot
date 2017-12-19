@@ -16,10 +16,12 @@ const promoteSlcakChannel = () => {
   3) connect
   4) discuss anything
   
-  https://100xcode.slack.com/
+  https://bit.ly/2iXo5ey   
   `
 
-  bot.post('statuses/update', { status: tweet }, (err, data, response) => {
+  bot.post('statuses/update', {
+    status: tweet
+  }, (err, data, response) => {
     console.log('SUCCESS: Promote the slack channel')
   })
 }

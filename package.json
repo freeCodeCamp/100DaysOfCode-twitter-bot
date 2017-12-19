@@ -1,6 +1,6 @@
 {
   "name": "100daysofcodebot",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "#100daysofcode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,9 @@
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": " BSD 3-Clause License",
+  "engines": {
+    "node": "8.9.0"
+  },
   "devDependencies": {
     "jest-cli": "21.2.1",
     "nodemon": "1.12.1",
