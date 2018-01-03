@@ -26,21 +26,21 @@
   },
   "license": " BSD 3-Clause License",
   "devDependencies": {
-    "jest-cli": "21.2.1",
-    "nodemon": "1.12.1",
+    "jest-cli": "22.0.4",
+    "nodemon": "1.14.7",
     "prettier": "^1.8.2"
   },
   "dependencies": {
     "contributor": "0.1.25",
     "dotenv": "^4.0.0",
-    "fs-extra": "4.0.2",
-    "level": "2.0.1",
-    "moment": "2.19.3",
-    "node-schedule": "1.2.1",
+    "fs-extra": "5.0.0",
+    "level": "2.1.1",
+    "moment": "2.20.1",
+    "node-schedule": "1.2.5",
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.51.0",
+    "snyk": "1.64.0",
     "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0"
