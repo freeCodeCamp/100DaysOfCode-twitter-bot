@@ -26,8 +26,8 @@
   },
   "license": " BSD 3-Clause License",
   "devDependencies": {
-    "jest-cli": "22.0.4",
     "nodemon": "1.14.10",
+    "jest-cli": "22.0.5",
     "prettier": "^1.8.2"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.65.3",
+    "snyk": "1.67.0",
     "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0"
