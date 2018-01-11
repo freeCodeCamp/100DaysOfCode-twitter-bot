@@ -26,8 +26,8 @@
   },
   "license": " BSD 3-Clause License",
   "devDependencies": {
+    "nodemon": "1.14.10",
     "jest-cli": "22.0.5",
-    "nodemon": "1.14.9",
     "prettier": "^1.8.2"
   },
   "dependencies": {
