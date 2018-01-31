@@ -16,7 +16,7 @@ const promoteSlcakChannel = () => {
   3) connect
   4) discuss anything
   
-  https://bit.ly/2iXo5ey   
+  https://bit.ly/2nsWDDB 
   `
 
   bot.post('statuses/update', {
