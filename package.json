@@ -26,7 +26,8 @@
   },
   "license": " BSD 3-Clause License",
   "engines": {
-    "node": "8.9.0"
+    "node": "8.9.2",
+    "npm": "5.6.0"
   },
   "devDependencies": {
     "jest-cli": "22.0.4",
@@ -53,8 +54,7 @@
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Quincy Larson",
       "email": null,
       "url": "https://github.com/QuincyLarson",
