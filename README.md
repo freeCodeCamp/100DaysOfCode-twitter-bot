@@ -8,7 +8,7 @@
 
 <p>
   <a href="https://twitter.com/intent/follow?screen_name=_100DaysOfCode">
-    <img src="https://img.shields.io/twitter/follow/shields_io.svg?style=social"
+    <img src="https://img.shields.io/twitter/follow/_100DaysOfCode.svg?style=social"
       alt="follow on Twitter"></a>
 </p>
 
