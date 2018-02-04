@@ -14,9 +14,9 @@
 
 [![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
 
-[![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
+[![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg?&colorB=ff0000)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
 
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
 
 Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
 
