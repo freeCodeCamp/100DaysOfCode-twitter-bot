@@ -30,11 +30,10 @@ const reply = event => {
     `Hi @${screenName} thanks for the follow! What are you working on today?`,
     `@${screenName} thanks for following! What are you working on today?`,
     `Hey @${screenName} thanks for the follow! What are you working on today?`,
-    `Thanks for following @${screenName}! What are you working on today?`,
-    `Thanks for following @${screenName}! What you up to today?`,
-    `Hey @${
-      screenName
-    }, working on anything code related today? Thanks for following`,
+    `Thanks for following, @${screenName}! What are you working on today?`,
+    `Thanks for following, @${screenName}! What you up to today?`,
+    `Thanks for the follow, @${screenName}! Hope you're coding something awesome. Don't forget to share with us too.`,
+    `Hey @${screenName}, working on anything code related today? Thanks for following`,
     `Awesome @${screenName}, thanks for following!`,
     `Thanks for the follow @${screenName}!`,
     `Thanks for the following @${screenName}! How are you today?`
