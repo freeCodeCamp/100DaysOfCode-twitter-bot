@@ -45,7 +45,7 @@ const sentimentBot = event => {
 
     // Check key isn't in db already, key being the screen_name
     db.get(screen_name, (err, value) => {
-      if (typeof value !== 'undefined') {
+      if (value !== undefined) {
         console.log('ALREADY IN DB USER ', screen_name)
       } else {
         // Put a user name and that they have been encouraged
