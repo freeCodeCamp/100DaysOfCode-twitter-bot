@@ -18,58 +18,52 @@
 
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
 
-Helping Developers who code and participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) share and communicate through Twitter.
+Helping developers who participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) engage on Twitter.
 
 ![Imgur](http://i.imgur.com/Ufo9BLY.png)
 
-## Bot Features
+## Features
 
-#### Retweet & Like a Tweet
+#### Retweets and likes tweets
 
 ![Screenshot1](http://i.imgur.com/V35iX70.png)
 
-#### When Followed, automated reply to the user
+#### Sends a thank-you reply to new followers
 
 ![Screenshot2](http://i.imgur.com/0LAvqUd.png)
 
-#### Congratulating user on starting/finishing #100DaysOfCode Challenge
+#### Congratulates users on starting/finishing [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
-#### #100DaysOfCode tweet has negative sentiment, tweets back encouragement
+#### Tweets back encouragement if a [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) tweet has negative sentiment
 
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
-#### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) so users are encouraged once a day
+#### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) to give users daily encouragement
 
-#### Uses Cron job to tweet Project of the Day
+#### Uses a cron-like [job scheduler](https://github.com/node-schedule/node-schedule) to tweet 'Project of the Day'
 
 ---
 
-## Pre-requisites
-
-This bot uses the `twit` npm package to manipulate tweets and streams and communicate with Twitter API. Please refer [documentation](https://github.com/ttezel/twit) to make substantial changes.
-
 ## Contributing
 
-You can help out by:
+This bot manipulates tweets and streams by connecting to the [Twitter API](https://developer.twitter.com/en/docs) via the `twit` npm package. Please refer to the `twit` [documentation](https://github.com/ttezel/twit) to make substantial changes.
+
+You can help by:
 
 * Solving existing [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
-* Enhancing the bot adding more functionalities [(see issues)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
+* Adding more functionalities to the bot ([see issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement))
 * Pointing out bugs/errors
 
-For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
+For any of the above, please create an issue so that it can be addressed. New to GitHub issues? You can familiarize yourself with them using GitHub's [guide](https://help.github.com/articles/creating-a-pull-request/).
 
-#### If You Can Make the Change
+#### Setup
 
-What you will need:
-
-* Your _own_ Twitter [account](https://twitter.com/signup) for testing your changes on
-* API Keys for Twitter and Sentiment
-    * Get your Twitter API keys [here](https://apps.twitter.com/app/new)
-    * Get your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3)
-* [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/network) the repository
-* Add API keys to `.env` file, your `.env` file should look something like this:
+* You will need your _own_ Twitter account for testing, since the bot tweets from this account. Generate your Twitter API keys by [creating a new app](https://apps.twitter.com/app/new).
+* Generate your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3).
+* Fork this repository.
+* Create an `.env` file and add in your API keys and Twitter handle, like so:
 
 ```
 TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
@@ -77,15 +71,17 @@ TWITTER_CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxkFNNj1H107PFv1mvWwEM6CZH0fjymV
 TWITTER_ACCESS_TOKEN=xxxxxxxxx-xxxxxxxxxxxxxxxxxxxxecKpi90bFhdsGG2N7iII
 TWITTER_ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxZAU8wNKAPU8Qz2c0PhOo43cGO
 SENTIMENT_KEY=xxxxxxxxxxxxxxxxxxxx7Ev80Pacp1h0c2kjsnMVVrG5m9MNlF
-QUERY_STRING=#someTestHashTag
+QUERY_STRING=#someTestHashtag
 TWITTER_USERNAME=YourTestTwitterAccountName
 ```
 
-* Change any hashtags to [`#someTestHashTag`](https://twitter.com/search?q=someTestHashTag&src=typd) so as not to spam the community hashtag.
-* `npm/yarn test` the tests will check all keys are available before you start :+1:
+#### Make the Change
+
+* Change any hashtags to [`#someTestHashtag`](https://twitter.com/search?q=someTestHashTag&src=typd) to avoid spamming the community hashtag.
+* Run `npm/yarn test` to check all keys are available before you start. :+1:
 * Make your suggested change.
-* Make sure the code style is in line with the existing code, run: `npm run format` to apply preferred formatting.
-* Create a pull request
+* Ensure code style follows existing code (run `npm run format` to apply preferred formatting).
+* Create a pull request.
 
 ---
 
@@ -93,4 +89,4 @@ TWITTER_USERNAME=YourTestTwitterAccountName
 
 BSD 3-Clause License
 
-Copyright (c) 2017, freeCodeCamp. All rights reserved.
+Copyright (c) 2018, freeCodeCamp. All rights reserved.
