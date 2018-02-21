@@ -16,6 +16,8 @@ const projectOfTheDay = require('./api/project-of-day')
 const refreshDb = require('./api/refresh-db')
 const sentimentBot = require('./api/sentiment')
 const promoteSlackChannel = require('./api/promoteSlackChannel')
+const promoteSlackHelp = require('./api/promoteSlackHelp')
+const promoteInstagram = require('./api/promoteInstagram')
 
 // import helpers
 const isReply = require('./helpers/isReply')
@@ -158,15 +160,32 @@ var job = schedule.scheduleJob(rule, () => {
   projectOfTheDay()
 })
 
-// Use cron-job to schedule promote slack channel
+// Use cron-job to schedule promote slack channel & developer help through slack
 const rule2 = new schedule.RecurrenceRule()
 rule2.dayOfWeek = [0, new schedule.Range(1,6)]
 rule2.hour = 6
 rule2.minute = 41
 
-var job2 = schedule.scheduleJob(rule2, () => {
+let job2 = schedule.scheduleJob(rule2, () => {
   console.log('Promote Slack Channel Cron Job runs successfully')
   promoteSlackChannel()
+})
+
+let job3 = schedule.scheduleJob(rule2, () => {
+  console.log(`Help Through Slack Channel Cron Job runs successfully`)
+  promoteSlackHelp();
+})
+
+
+// Use cron-job to schedule promote Instagram
+const rule3 = new schedule.RecurrenceRule()
+rule3.dayOfWeek = [0, new schedule.Range(1,6)]
+rule3.hour = 8
+rule3.minute = 01
+
+let job4 = schedule.scheduleJob(rule3, () => {
+  console.log(`Promote Instagram Cron Job runs successfully`);
+  promoteInstagram()
 })
 
 // Refresh LevelDB every 24 hrs
