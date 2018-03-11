@@ -15,11 +15,15 @@ const promoteInstagram = () => {
   https://www.instagram.com/_100DaysOfCode/
   `
 
-  bot.post('statuses/update', {
-    status: tweet
-  }, (err, data, response) => {
-    console.log('SUCCESS: Promote the Slack channel now')
-  })
+  bot.post(
+    'statuses/update',
+    {
+      status: tweet
+    },
+    (err, data, response) => {
+      console.log('SUCCESS: Promote the Slack channel now')
+    }
+  )
 }
 
 module.exports = promoteInstagram
