@@ -1,30 +1,38 @@
-# imposter syndrome disclaimer
-A warm invitation to contribute, to be adapted and included in your project's README
+## Contributing
 
-### How to contribute
+You can help out by:
 
-*Imposter syndrome disclaimer*: I want your help. No really, I do.
+- Solving existing [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/labels/bug).
+- Enhancing the bot adding more functionality [(see issues)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/labels/enhancement)
+- Pointing out bugs/errors.
 
-There might be a little voice inside that tells you you're not ready; that you need to do one more tutorial, or learn another framework, or write a few more blog posts before you can help me with this project.
+For above option(s), please create an issue so it can be addressed. New to GitHub issues? They have a pretty handy guide you can use to familiarize yourself with them.
 
-I assure you, that's not the case.
+## If you can make a change
 
-This project has some clear Contribution Guidelines and expectations that you can read here (link).
+What you will need:
 
-The contribution guidelines outline the process that you'll need to follow to get a patch merged. By making expectations and process explicit, I hope it will make it easier for you to contribute.
+- Your _own_ Twitter [account](https://twitter.com/signup) for testing
+- API Keys for Twitter.
+  - Get your Twitter API keys [here](https://apps.twitter.com/app/new).
+- [Fork](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot) the repository.
+- Add API keys to `.env` file, your `.env` file should look something like this:
 
-And you don't just have to write code. You can help out by writing documentation, tests, or even by giving feedback about this work. (And yes, that includes giving feedback about the contribution guidelines.)
+```shell
+CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
+CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxkFNNj1H107PFv1mvWwEM6CZH0fjymV
+ACCESS_TOKEN=xxxxxxxxx-xxxxxxxxxxxxxxxxxxxxecKpi90bFhdsGG2N7iII
+ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxZAU8wNKAPU8Qz2c0PhOo43cGO
 
-Thank you for contributing!
+USERNAME_BLACKLIST=someAccount
+#QUERY_STRING=100daysofcode,301daysofcode
+QUERY_STRING=sometesthashtag
 
-### About this work
+TWEET_TIME_OUT_MIN=1
+TWEET_TIME_OUT_MAX=120
+TWEET_QUEUE_TIME=5
+```
 
-I came up with the idea of an imposter syndrome disclaimer for project READMEs while working on my 2016 talks for [OSCON](https://conferences.oreilly.com/oscon/oscon-tx-2016/public/schedule/speaker/230023) and [PyCon](https://www.youtube.com/watch?v=6Uj746j9Heo). A goal was to share how leaders, mentors, and maintainers could become more accessible, welcoming collaborators with junior developers. Being explicitly welcoming and providing clear contribution guidelines is a powerful way to encourage others to contribute to your work.
-
-### Examples
-
-I'm thrilled that projects have adopted this language! Here are a few [examples](https://github.com/adriennefriend/imposter-syndrome-disclaimer/blob/master/examples.md).
-
-### Licensing
-
-MIT. Take, adapt, use. A link back to this repo is appreciated.
+- Make your suggested change.
+- Make sure the code style looks similar to the existing code.
+- Create a pull request.

@@ -1,24 +1,19 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
+
+<strong>Helping developers who participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) engage on Twitter.</strong>
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/spences10/100DaysOfCode-twitter-bot.svg)](https://greenkeeper.io/)
-
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
-
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-
+[![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
+[![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg?&colorB=ff0000)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
 <p>
   <a href="https://twitter.com/intent/follow?screen_name=_100DaysOfCode">
     <img src="https://img.shields.io/twitter/follow/_100DaysOfCode.svg?style=social"
       alt="follow on Twitter"></a>
 </p>
-
-[![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
-
-[![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg?&colorB=ff0000)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
-
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
-
-Helping developers who participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) engage on Twitter.
 
 ![Imgur](http://i.imgur.com/Ufo9BLY.png)
 
