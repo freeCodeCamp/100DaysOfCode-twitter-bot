@@ -19,11 +19,15 @@ const promoteSlcakChannel = () => {
   https://bit.ly/2nsWDDB 
   `
 
-  bot.post('statuses/update', {
-    status: tweet
-  }, (err, data, response) => {
-    console.log('SUCCESS: Promote the Instagram channel now')
-  })
+  bot.post(
+    'statuses/update',
+    {
+      status: tweet
+    },
+    (err, data, response) => {
+      console.log('SUCCESS: Promote the Instagram channel now')
+    }
+  )
 }
 
 module.exports = promoteSlcakChannel

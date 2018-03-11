@@ -11,11 +11,15 @@ const promoteSlackHelp = () => {
   Invite link: http://bit.ly/2nsWDDB 
   `
 
-  bot.post('statuses/update', {
-    status: tweet
-  }, (err, data, response) => {
-    console.log('SUCCESS: Promote the slack channel')
-  })
+  bot.post(
+    'statuses/update',
+    {
+      status: tweet
+    },
+    (err, data, response) => {
+      console.log('SUCCESS: Promote the slack channel')
+    }
+  )
 }
 
 module.exports = promoteSlackHelp

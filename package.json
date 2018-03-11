@@ -1,5 +1,5 @@
 {
-  "name": "100daysofcodebot",
+  "name": "100DaysOfCodeBot",
   "version": "2.9.0",
   "description": "#100DaysOfCode bot for Free Code Camp",
   "main": "index.js",
@@ -55,7 +55,8 @@
     "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Quincy Larson",
       "email": null,
       "url": "https://github.com/QuincyLarson",
