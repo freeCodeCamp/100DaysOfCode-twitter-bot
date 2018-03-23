@@ -48,7 +48,7 @@
     "snyk": "1.70.2",
     "twit": "2.2.9",
     "unified": "^6.1.6",
-    "unique-random-array": "1.0.0"
+    "unique-random-array": "1.0.1"
   },
   "repository": {
     "type": "git",
