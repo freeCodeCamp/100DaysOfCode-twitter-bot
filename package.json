@@ -10,8 +10,9 @@
     "snyk-protect": "snyk protect",
     "snyk-wizard": "snyk wizard",
     "prepublish": "npm run snyk-protect",
-    "format": "prettier es5 --no-semi --single-quote --write src/**/*.js"
+    "format": "pretty-quick"
   },
+  "precommit": "pretty-quick --staged",
   "keywords": [
     "#100daysofcode",
     "#100DaysOfCode",
@@ -23,7 +24,8 @@
   ],
   "author": "Amandeepmittal <@amandeepmittal>",
   "bugs": {
-    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
+    "url":
+      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": " BSD 3-Clause License",
   "engines": {
@@ -54,7 +56,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
+    "url":
+      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
   "contributors": [
