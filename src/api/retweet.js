@@ -10,12 +10,16 @@ const retweet = event => {
   // console.log('====================')
   // console.log('RETWEET EVENT: ', event)
   // console.log('====================')
-  bot.post('statuses/retweet/:id', { id: event.id_str }, (err, res) => {
-    if (err) {
-      console.log('RETWEET ERRORDERP: ', err.message)
+  bot.post(
+    'statuses/retweet/:id',
+    { id: event.id_str },
+    (err, res) => {
+      if (err) {
+        console.log('RETWEET ERRORDERP: ', err.message)
+      }
+      console.log('RT SUCCESS: ', event.text)
     }
-    console.log('RT SUCCESS: ', event.text)
-  })
+  )
 }
 
 module.exports = retweet
