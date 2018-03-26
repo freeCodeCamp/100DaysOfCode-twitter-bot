@@ -1,7 +1,8 @@
 # [100DaysOfCode Twitter Bot](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
-
-<strong>Helping developers who participate in [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) engage on Twitter.</strong>
+<strong>Helping developers who participate in
+[#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
+engage on Twitter.</strong>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/spences10/100DaysOfCode-twitter-bot.svg)](https://greenkeeper.io/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
@@ -9,6 +10,7 @@
 [![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
 [![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg?&colorB=ff0000)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
+
 <p>
   <a href="https://twitter.com/intent/follow?screen_name=_100DaysOfCode">
     <img src="https://img.shields.io/twitter/follow/_100DaysOfCode.svg?style=social"
@@ -43,22 +45,35 @@
 
 ## Contributing
 
-This bot manipulates tweets and streams by connecting to the [Twitter API](https://developer.twitter.com/en/docs) via the `twit` npm package. Please refer to the `twit` [documentation](https://github.com/ttezel/twit) to make substantial changes.
+This bot manipulates tweets and streams by connecting to the
+[Twitter API](https://developer.twitter.com/en/docs) via the `twit`
+npm package. Please refer to the `twit`
+[documentation](https://github.com/ttezel/twit) to make substantial
+changes.
 
 You can help by:
 
-* Solving existing [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
-* Adding more functionalities to the bot ([see issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement))
+* Solving existing
+  [issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue)
+* Adding more functionalities to the bot
+  ([see issues](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement))
 * Pointing out bugs/errors
 
-For any of the above, please create an issue so that it can be addressed. New to GitHub issues? You can familiarize yourself with them using GitHub's [guide](https://help.github.com/articles/creating-a-pull-request/).
+For any of the above, please create an issue so that it can be
+addressed. New to GitHub issues? You can familiarize yourself with
+them using GitHub's
+[guide](https://help.github.com/articles/creating-a-pull-request/).
 
 #### Setup
 
-* You will need your _own_ Twitter account for testing, since the bot tweets from this account. Generate your Twitter API keys by [creating a new app](https://apps.twitter.com/app/new).
-* Generate your Sentiment API key [here](https://market.mashape.com/vivekn/sentiment-3).
+* You will need your _own_ Twitter account for testing, since the bot
+  tweets from this account. Generate your Twitter API keys by
+  [creating a new app](https://apps.twitter.com/app/new).
+* Generate your Sentiment API key
+  [here](https://market.mashape.com/vivekn/sentiment-3).
 * Fork this repository.
-* Create an `.env` file and add in your API keys and Twitter handle, like so:
+* Create an `.env` file and add in your API keys and Twitter handle,
+  like so:
 
 ```
 TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
@@ -72,10 +87,14 @@ TWITTER_USERNAME=YourTestTwitterAccountName
 
 #### Make the Change
 
-* Change any hashtags to [`#someTestHashtag`](https://twitter.com/search?q=someTestHashTag&src=typd) to avoid spamming the community hashtag.
-* Run `npm/yarn test` to check all keys are available before you start. :+1:
+* Change any hashtags to
+  [`#someTestHashtag`](https://twitter.com/search?q=someTestHashTag&src=typd)
+  to avoid spamming the community hashtag.
+* Run `npm/yarn test` to check all keys are available before you
+  start. :+1:
 * Make your suggested change.
-* Ensure code style follows existing code (run `npm run format` to apply preferred formatting).
+* Ensure code style follows existing code (run `npm run format` to
+  apply preferred formatting).
 * Create a pull request.
 
 ---

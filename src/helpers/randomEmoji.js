@@ -3,7 +3,7 @@ function rando(arr) {
 }
 
 const randomEmoji = () => {
-  const emoji = ['👍', '👌', '❤️','☕️','🍕','✨','🦄']
+  const emoji = ['👍', '👌', '❤️', '☕️', '🍕', '✨', '🦄']
   return `${rando(emoji)}`
 }
 
