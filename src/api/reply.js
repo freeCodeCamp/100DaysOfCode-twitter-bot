@@ -33,18 +33,14 @@ const reply = event => {
     `Hey @${screenName} thanks for the follow! What are you working on today?`,
     `Thanks for following, @${screenName}! What are you working on today?`,
     `Thanks for following, @${screenName}! What you up to today?`,
-    `Thanks for the follow, @${
-      screenName
-    }! Hope you're coding something awesome. Don't forget to share with us too.`,
-    `Hey @${
-      screenName
-    }, working on anything code related today? Thanks for following`,
+    `Thanks for the follow, @${screenName}! Hope you're coding something awesome. Don't forget to share with us too.`,
+    `Hey @${screenName}, working on anything code related today? Thanks for following`,
     `Awesome @${screenName}, thanks for following!`,
     `Thanks for the follow @${screenName}!`,
     `Thanks for the following @${screenName}! How are you today?`
   ])
 
-  let response = `${randomReply()} ${randomEmoji()}` 
+  let response = `${randomReply()} ${randomEmoji()}`
   tweetNow(response)
 }
 
