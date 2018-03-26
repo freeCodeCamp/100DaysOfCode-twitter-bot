@@ -10,12 +10,16 @@ const like = event => {
   // console.log('====================')
   // console.log('LIKE EVENT: ', event)
   // console.log('====================')
-  bot.post('favorites/create', { id: event.id_str }, (err, data, response) => {
-    if (err) {
-      console.log('LIKE ERRORDERP: ', err.message)
+  bot.post(
+    'favorites/create',
+    { id: event.id_str },
+    (err, data, response) => {
+      if (err) {
+        console.log('LIKE ERRORDERP: ', err.message)
+      }
+      console.log('LIKE SUCCESS: ', event.text)
     }
-    console.log('LIKE SUCCESS: ', event.text)
-  })
+  )
 }
 
 module.exports = like

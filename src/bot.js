@@ -83,8 +83,8 @@ const randomMax = parseInt(param.tweetTimeOutMax)
 
 const newTimeOut = date => {
   return moment(date)
-  .add(getRandomInt(randomMin, randomMax), 'm')
-  .toDate()
+    .add(getRandomInt(randomMin, randomMax), 'm')
+    .toDate()
 }
 
 // loop through tweets object
@@ -96,7 +96,7 @@ setInterval(() => {
   console.log('====================')
   console.log(`TWEET COUNTER=${tweetCounter}`)
   console.log('====================')
-  if (tweetCounter === 0) return  
+  if (tweetCounter === 0) return
   // new array from tweets, right?
   tweets = tweets.slice()
   // sort it
@@ -116,24 +116,26 @@ setInterval(() => {
       const itemEvent = item.event
       const userName = itemEvent.user.screen_name.toLowerCase()
       // console.log(itemEvent)
-      const blacklist = config.twitterConfig.blacklist.split(',')    
+      const blacklist = config.twitterConfig.blacklist.split(',')
       if (blacklist.indexOf(userName) > -1) {
         console.log('====================')
         console.log(`USER ${userName} IN BLACKLIST - DO NOTHING`)
         console.log('====================')
       } else {
         // check sentiment
-        sentimentBot(itemEvent)     
+        sentimentBot(itemEvent)
         // coin flip to like or retweet
-        if (Math.floor(Math.random() * 2)===0) {
+        if (Math.floor(Math.random() * 2) === 0) {
           retweet(itemEvent)
         } else {
           like(itemEvent)
-        }        
+        }
       }
       // then remove it
       tweets.shift()
-      console.log(`Item removed from queue, current length ${tweets.length}`)
+      console.log(
+        `Item removed from queue, current length ${tweets.length}`
+      )
       // count down to 0 from the max tweet number = 100
       tweetCounter--
     }
@@ -151,7 +153,7 @@ userStream.on('follow', reply)
 
 // Use cron-job to schedule Project of the day
 const rule = new schedule.RecurrenceRule()
-rule.dayOfWeek = [0, new schedule.Range(1,6)]
+rule.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule.hour = 11
 rule.minute = 59
 
@@ -162,7 +164,7 @@ var job = schedule.scheduleJob(rule, () => {
 
 // Use cron-job to schedule promote slack channel & developer help through slack
 const rule2 = new schedule.RecurrenceRule()
-rule2.dayOfWeek = [0, new schedule.Range(1,6)]
+rule2.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule2.hour = 6
 rule2.minute = 41
 
@@ -173,24 +175,22 @@ let job2 = schedule.scheduleJob(rule2, () => {
 
 let job3 = schedule.scheduleJob(rule2, () => {
   console.log(`Help Through Slack Channel Cron Job runs successfully`)
-  promoteSlackHelp();
+  promoteSlackHelp()
 })
-
 
 // Use cron-job to schedule promote Instagram
 const rule3 = new schedule.RecurrenceRule()
-rule3.dayOfWeek = [0, new schedule.Range(1,6)]
+rule3.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule3.hour = 8
 rule3.minute = 01
 
 let job4 = schedule.scheduleJob(rule3, () => {
-  console.log(`Promote Instagram Cron Job runs successfully`);
+  console.log(`Promote Instagram Cron Job runs successfully`)
   promoteInstagram()
 })
 
 // Refresh LevelDB every 24 hrs
 setInterval(refreshDb, 1000 * 60 * 60 * 24)
-
 
 // ABANDONED API(s)
 

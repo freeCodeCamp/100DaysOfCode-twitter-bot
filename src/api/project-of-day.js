@@ -10,10 +10,15 @@ const bot = new twit(config.twitterKeys)
 const projectOfTheDay = () => {
   let projectOfDay = uniqueRandom(projectsList.projectOfTheDay)
   let tweet =
-    "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay " + projectOfDay()
-  bot.post('statuses/update', { status: tweet }, (err, data, response) => {
-    console.log('SUCCESS: Project of the Day: ' + tweet)
-  })
+    "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay " +
+    projectOfDay()
+  bot.post(
+    'statuses/update',
+    { status: tweet },
+    (err, data, response) => {
+      console.log('SUCCESS: Project of the Day: ' + tweet)
+    }
+  )
 }
 
 module.exports = projectOfTheDay

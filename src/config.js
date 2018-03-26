@@ -20,6 +20,6 @@ module.exports = {
     blacklist: process.env.USERNAME_BLACKLIST,
     tweetTimeOutMin: process.env.TWEET_TIME_OUT_MIN,
     tweetTimeOutMax: process.env.TWEET_TIME_OUT_MAX,
-    tweetQueueTime: 1000 * 60 * process.env.TWEET_QUEUE_TIME,
+    tweetQueueTime: 1000 * 60 * process.env.TWEET_QUEUE_TIME
   }
 }
