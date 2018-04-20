@@ -45,7 +45,7 @@
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.70.2",
+    "snyk": "1.73.0",
     "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.0"
