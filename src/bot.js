@@ -1,12 +1,13 @@
 // hello 👋
+// eslint-disable-next-line no-console
 console.log('Welcome #100DaysOfCode Twitter Bot')
 
 // Dependencies
 const schedule = require('node-schedule')
-const twit = require('twit')
-const config = require('./config')
-const bot = new twit(config.twitterKeys)
 const moment = require('moment')
+
+const bot = require('./twitBot')
+const config = require('./config')
 
 // Import API functions
 const retweet = require('./api/retweet')
@@ -15,32 +16,33 @@ const reply = require('./api/reply')
 const projectOfTheDay = require('./api/project-of-day')
 const refreshDb = require('./api/refresh-db')
 const sentimentBot = require('./api/sentiment')
-const promoteSlackChannel = require('./api/promoteSlackChannel')
-const promoteSlackHelp = require('./api/promoteSlackHelp')
-const promoteInstagram = require('./api/promoteInstagram')
+const { promote } = require('./api/promote')
+const { tweetLimit, param, trackWords } = require('./constants')
 
 // import helpers
 const isReply = require('./helpers/isReply')
-
-// Frequency in minutes
-const frequency = 1000 * 60 * 30
-const firstOrLastDayFrequency = 40
-
-// counter for tweets limit
-// detail here: https://support.twitter.com/articles/15364#
-const tweetLimit = 2400
-
-// load up keywords
-const param = config.twitterConfig
-const trackWords = param.queryString.split(',')
 
 // use stream to track keywords
 const trackStream = bot.stream('statuses/filter', {
   track: trackWords
 })
 
-// Retweet and like on keywords
-trackStream.on('tweet', addTweetToQueue)
+// set timeIn
+const newTimeIn = date => moment(date).toDate()
+
+// set timeOut 🙃
+const randomMin = parseInt(param.tweetTimeOutMin, 10)
+const randomMax = parseInt(param.tweetTimeOutMax, 10)
+
+// function to rerurn random
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+const newTimeOut = date =>
+  moment(date)
+    .add(getRandomInt(randomMin, randomMax), 'm')
+    .toDate()
 
 // tweets object
 let tweets = []
@@ -50,8 +52,11 @@ let tweetCounter = tweetLimit / 24
 // e is the tweet event
 function addTweetToQueue(e) {
   if (isReply(e)) {
+    // eslint-disable-next-line no-console
     console.log('====================')
+    // eslint-disable-next-line no-console
     console.log(`=IS REPLY RETURNING=`)
+    // eslint-disable-next-line no-console
     console.log('====================')
     return
   }
@@ -63,38 +68,28 @@ function addTweetToQueue(e) {
     timeOut: new Date(newTimeOut()),
     event: e // EVERYTHING!!!
   })
+  // eslint-disable-next-line no-console
   console.log(`Item added to queue, current length=${tweets.length}`)
-  // console.log(tweets)
 }
 
-// function to rerurn random
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-// set timeIn
-const newTimeIn = date => {
-  return moment(date).toDate()
-}
-
-// set timeOut 🙃
-const randomMin = parseInt(param.tweetTimeOutMin)
-const randomMax = parseInt(param.tweetTimeOutMax)
-
-const newTimeOut = date => {
-  return moment(date)
-    .add(getRandomInt(randomMin, randomMax), 'm')
-    .toDate()
-}
+// Retweet and like on keywords
+trackStream.on('tweet', addTweetToQueue)
 
 // loop through tweets object
 // pop off tweets after timeOut is matched
 const queueTime = param.tweetQueueTime
 
+function timeConverter(unixTimestamp) {
+  return new Date(unixTimestamp).toISOString()
+}
+
 setInterval(() => {
   // check counter
+  // eslint-disable-next-line no-console
   console.log('====================')
+  // eslint-disable-next-line no-console
   console.log(`TWEET COUNTER=${tweetCounter}`)
+  // eslint-disable-next-line no-console
   console.log('====================')
   if (tweetCounter === 0) return
   // new array from tweets, right?
@@ -102,24 +97,31 @@ setInterval(() => {
   // sort it
   tweets.sort((a, b) => a.timeOut - b.timeOut)
   // loop through the thing
-  tweets.map(item => {
-    // console.log(time.timeOut)
+  tweets.forEach(item => {
     const itemTimeOut = new Date(item.timeOut).getTime()
     const currentTime = new Date().getTime()
+    // eslint-disable-next-line no-console
     console.log('====================')
+    // eslint-disable-next-line no-console
     console.log(`ITEM TIME OUT==== ${timeConverter(itemTimeOut)}`)
+    // eslint-disable-next-line no-console
     console.log(`ITEM TIME NOW==== ${timeConverter(currentTime)}`)
+    // eslint-disable-next-line no-console
     console.log(`POP IT OFF?====== ${itemTimeOut <= currentTime}`)
+    // eslint-disable-next-line no-console
     console.log('====================')
     if (itemTimeOut <= currentTime) {
       // item needs 'dispatching' so tweet it
       const itemEvent = item.event
       const userName = itemEvent.user.screen_name.toLowerCase()
-      // console.log(itemEvent)
+
       const blacklist = config.twitterConfig.blacklist.split(',')
       if (blacklist.indexOf(userName) > -1) {
+        // eslint-disable-next-line no-console
         console.log('====================')
+        // eslint-disable-next-line no-console
         console.log(`USER ${userName} IN BLACKLIST - DO NOTHING`)
+        // eslint-disable-next-line no-console
         console.log('====================')
       } else {
         // check sentiment
@@ -133,6 +135,7 @@ setInterval(() => {
       }
       // then remove it
       tweets.shift()
+      // eslint-disable-next-line no-console
       console.log(
         `Item removed from queue, current length ${tweets.length}`
       )
@@ -140,12 +143,7 @@ setInterval(() => {
       tweetCounter--
     }
   })
-  return tweets
 }, queueTime)
-
-function timeConverter(UNIX_timestamp) {
-  return new Date(UNIX_timestamp).toISOString()
-}
 
 // Reply
 const userStream = bot.stream('user')
@@ -157,7 +155,8 @@ rule.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule.hour = 11
 rule.minute = 59
 
-var job = schedule.scheduleJob(rule, () => {
+schedule.scheduleJob(rule, () => {
+  // eslint-disable-next-line no-console
   console.log('Cron Job runs successfully')
   projectOfTheDay()
 })
@@ -168,29 +167,35 @@ rule2.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule2.hour = 6
 rule2.minute = 41
 
-let job2 = schedule.scheduleJob(rule2, () => {
+schedule.scheduleJob(rule2, () => {
+  // eslint-disable-next-line no-console
   console.log('Promote Slack Channel Cron Job runs successfully')
-  promoteSlackChannel()
+  promote('slack')
 })
 
-let job3 = schedule.scheduleJob(rule2, () => {
+schedule.scheduleJob(rule2, () => {
+  // eslint-disable-next-line no-console
   console.log(`Help Through Slack Channel Cron Job runs successfully`)
-  promoteSlackHelp()
+  promote('slackHelp')
 })
 
 // Use cron-job to schedule promote Instagram
 const rule3 = new schedule.RecurrenceRule()
 rule3.dayOfWeek = [0, new schedule.Range(1, 6)]
 rule3.hour = 8
-rule3.minute = 01
+rule3.minute = 1
 
-let job4 = schedule.scheduleJob(rule3, () => {
+schedule.scheduleJob(rule3, () => {
+  // eslint-disable-next-line no-console
   console.log(`Promote Instagram Cron Job runs successfully`)
-  promoteInstagram()
+  promote('instagram')
 })
 
 // Refresh LevelDB every 24 hrs
 setInterval(refreshDb, 1000 * 60 * 60 * 24)
+
+// Make sure only one instance of the bot in the app.
+exports.bot = bot
 
 // ABANDONED API(s)
 
