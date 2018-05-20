@@ -1,5 +1,3 @@
-'use strict'
-
 const level = require('level')
 const path = require('path')
 

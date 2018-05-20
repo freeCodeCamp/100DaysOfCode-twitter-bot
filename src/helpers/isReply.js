@@ -10,8 +10,11 @@ const isReply = tweet => {
     tweet.in_reply_to_user_id ||
     tweet.in_reply_to_user_id_str ||
     tweet.in_reply_to_screen_name
-  )
+  ) {
     return true
+  }
+
+  return false
 }
 
 module.exports = isReply
