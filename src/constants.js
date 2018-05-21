@@ -9,5 +9,6 @@ exports.firstOrLastDayFrequency = 40
 exports.tweetLimit = 2400
 
 // load up keywords
-const param = config.twitterConfig
-exports.trackWords = param.queryString.split(',')
+exports.param = config.twitterConfig
+
+exports.trackWords = config.twitterConfig.queryString.split(',')
