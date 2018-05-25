@@ -1,18 +1,18 @@
-'use strict'
-
-const config = require('../config')
-var projectsList = require('../helpers/projects-list')
 const uniqueRandom = require('unique-random-array')
-const twit = require('twit')
 
-const bot = new twit(config.twitterKeys)
+const bot = require('../twitBot')
+const projectsList = require('../helpers/projects-list')
+
+const MESSAGE =
+  "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay"
 
 const projectOfTheDay = () => {
-  let projectOfDay = uniqueRandom(projectsList.projectOfTheDay)
-  let tweet =
-    "Today's #100DaysOfCode #301DaysOfCode #ProjectOfTheDay " + projectOfDay()
-  bot.post('statuses/update', { status: tweet }, (err, data, response) => {
-    console.log('SUCCESS: Project of the Day: ' + tweet)
+  const projectOfDay = uniqueRandom(projectsList.projectOfTheDay)
+
+  const tweet = `${MESSAGE} ${projectOfDay()}`
+  bot.post('statuses/update', { status: tweet }, () => {
+    // eslint-disable-next-line no-console
+    console.log('SUCCESS: Project of the Day: ', tweet)
   })
 }
 

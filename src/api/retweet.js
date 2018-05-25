@@ -1,19 +1,12 @@
-const Twit = require('twit')
-const config = require('../config')
-
-const bot = new Twit(config.twitterKeys)
+const bot = require('../twitBot')
 
 const retweet = event => {
-  // console.log(JSON.stringify(event.lang))
-  // console.log(JSON.stringify(event))
-  // event.source.screen_name
-  // console.log('====================')
-  // console.log('RETWEET EVENT: ', event)
-  // console.log('====================')
-  bot.post('statuses/retweet/:id', { id: event.id_str }, (err, res) => {
+  bot.post('statuses/retweet/:id', { id: event.id_str }, err => {
     if (err) {
+      // eslint-disable-next-line no-console
       console.log('RETWEET ERRORDERP: ', err.message)
     }
+    // eslint-disable-next-line no-console
     console.log('RT SUCCESS: ', event.text)
   })
 }
