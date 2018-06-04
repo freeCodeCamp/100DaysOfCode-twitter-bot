@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "snyk test && jest --coverage --watch *.js",
+    "test": "jest --coverage --watch *.js",
     "dev": "jest --coverage && nodemon index.js ",
     "lint": "eslint ./src",
     "snyk-protect": "snyk protect",
@@ -13,7 +13,6 @@
     "prepublish": "npm run snyk-protect",
     "format": "pretty-quick"
   },
-  "precommit": "pretty-quick --staged",
   "keywords": [
     "#100daysofcode",
     "#100DaysOfCode",
