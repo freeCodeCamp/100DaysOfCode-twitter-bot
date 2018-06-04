@@ -1,6 +1,6 @@
 {
   "name": "100DaysOfCodeBot",
-  "version": "2.11.0",
+  "version": "2.11.1",
   "description": "#100DaysOfCode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
