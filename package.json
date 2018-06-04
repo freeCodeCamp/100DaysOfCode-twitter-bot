@@ -1,18 +1,19 @@
 {
   "name": "100DaysOfCodeBot",
-  "version": "2.10.0",
+  "version": "2.11.1",
   "description": "#100DaysOfCode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "snyk test && jest --coverage --watch *.js",
+    "test": "jest --coverage --watch *.js",
     "dev": "jest --coverage && nodemon index.js ",
+    "lint": "eslint ./src",
     "snyk-protect": "snyk protect",
     "snyk-wizard": "snyk wizard",
     "prepublish": "npm run snyk-protect",
     "format": "pretty-quick"
   },
-  "precommit": "pretty-quick --staged",
+
   "keywords": [
     "#100daysofcode",
     "#100DaysOfCode",
@@ -24,15 +25,18 @@
   ],
   "author": "Amandeepmittal <@amandeepmittal>",
   "bugs": {
-    "url":
-      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": " BSD 3-Clause License",
   "engines": {
-    "node": "8.9.2",
+    "node": "8.11.1",
     "npm": "5.6.0"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
     "husky": "0.14.3",
     "jest-cli": "22.4.2",
     "nodemon": "1.17.1",
@@ -42,22 +46,21 @@
   "dependencies": {
     "contributor": "0.1.25",
     "dotenv": "^5.0.0",
-    "fs-extra": "5.0.0",
+    "fs-extra": "6.0.0",
     "level": "3.0.0",
-    "moment": "2.21.0",
+    "moment": "2.22.1",
     "node-schedule": "1.3.0",
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.70.3",
+    "snyk": "1.78.0",
     "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.1"
   },
   "repository": {
     "type": "git",
-    "url":
-      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
+    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
   "contributors": [
