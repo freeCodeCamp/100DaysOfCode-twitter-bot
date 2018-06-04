@@ -1,7 +1,7 @@
 const config = require('./config')
 
 const keys = config.twitterKeys
-const param = config.twitterConfig
+// const param = config.twitterConfig
 
 test('returns config object', () => {
   expect(keys.access_token).not.toBe('')
@@ -10,10 +10,10 @@ test('returns config object', () => {
   expect(keys.consumer_secret).not.toBe('')
 })
 
-test('check TWEET_TIME_OUT_MAX', () => {
-  expect(param.tweetTimeOutMax).not.toBe(undefined)
-})
+// test('check TWEET_TIME_OUT_MAX', () => {
+//   expect(param.tweetTimeOutMax).not.toBe(undefined)
+// })
 
-test('check TWEET_TIME_OUT_MIN', () => {
-  expect(param.tweetTimeOutMin).not.toBe(undefined)
-})
+// test('check TWEET_TIME_OUT_MIN', () => {
+//   expect(param.tweetTimeOutMin).not.toBe(undefined)
+// })

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --coverage --watch *.js",
+    "test": "jest",
     "dev": "jest --coverage && nodemon index.js ",
     "lint": "eslint ./src",
     "snyk-protect": "snyk protect",
