@@ -1,11 +1,11 @@
 {
   "name": "100DaysOfCodeBot",
-  "version": "2.11.1",
+  "version": "2.11.2",
   "description": "#100DaysOfCode bot for Free Code Camp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --coverage --watch *.js",
+    "test": "snyk test && jest --coverage --watch *.js",
     "dev": "jest --coverage && nodemon index.js ",
     "lint": "eslint ./src",
     "snyk-protect": "snyk protect",
@@ -13,7 +13,6 @@
     "prepublish": "npm run snyk-protect",
     "format": "pretty-quick"
   },
-
   "keywords": [
     "#100daysofcode",
     "#100DaysOfCode",
@@ -25,7 +24,8 @@
   ],
   "author": "Amandeepmittal <@amandeepmittal>",
   "bugs": {
-    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
+    "url":
+      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues"
   },
   "license": " BSD 3-Clause License",
   "engines": {
@@ -37,7 +37,6 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.12.0",
-    "husky": "0.14.3",
     "jest-cli": "22.4.2",
     "nodemon": "1.17.1",
     "prettier": "1.11.1",
@@ -46,32 +45,34 @@
   "dependencies": {
     "contributor": "0.1.25",
     "dotenv": "^5.0.0",
-    "fs-extra": "6.0.0",
+    "fs-extra": "5.0.0",
     "level": "3.0.0",
-    "moment": "2.22.1",
+    "moment": "2.21.0",
     "node-schedule": "1.3.0",
     "positivity-api": "1.2.0",
     "retext-english": "^3.0.0",
     "retext-sentiment": "^4.1.0",
-    "snyk": "1.78.0",
+    "snyk": "1.70.3",
     "twit": "2.2.9",
     "unified": "^6.1.6",
     "unique-random-array": "1.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
+    "url":
+      "https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot.git"
   },
   "homepage": "https://github.com/freeCodeCamp/100DaysOfCode",
+  "snyk": true,
   "contributors": [
     {
-      "name": "Quincy Larson",
+      "name": "Benjamin Spak",
       "email": null,
-      "url": "https://github.com/QuincyLarson",
-      "contributions": 1,
-      "additions": 9,
-      "deletions": 17,
-      "hireable": null
+      "url": "https://github.com/benjaminspak",
+      "contributions": 2,
+      "additions": 25,
+      "deletions": 3,
+      "hireable": true
     },
     {
       "name": "Shovan Chatterjee",
@@ -83,22 +84,22 @@
       "hireable": null
     },
     {
-      "name": "Benjamin Spak",
+      "name": "Quincy Larson",
       "email": null,
-      "url": "https://github.com/benjaminspak",
-      "contributions": 2,
-      "additions": 25,
-      "deletions": 3,
-      "hireable": true
+      "url": "https://github.com/QuincyLarson",
+      "contributions": 1,
+      "additions": 9,
+      "deletions": 17,
+      "hireable": null
     },
     {
-      "name": "Snyk bot",
+      "name": "Michael Haviv",
       "email": null,
-      "url": "https://github.com/snyk-bot",
-      "contributions": 1,
-      "additions": 4,
-      "deletions": 1,
-      "hireable": null
+      "url": "https://github.com/mhaviv",
+      "contributions": 3,
+      "additions": 30,
+      "deletions": 16,
+      "hireable": true
     },
     {
       "name": "Jamie King",
@@ -110,6 +111,15 @@
       "hireable": null
     },
     {
+      "name": "Scott Spence",
+      "email": null,
+      "url": "https://github.com/spences10",
+      "contributions": 94,
+      "additions": 22193,
+      "deletions": 12313,
+      "hireable": true
+    },
+    {
       "name": "Ilyes Hammadi",
       "email": null,
       "url": "https://github.com/Ilyes-Hammadi",
@@ -119,22 +129,40 @@
       "hireable": true
     },
     {
-      "name": "Scott Spence",
+      "name": null,
       "email": null,
-      "url": "https://github.com/spences10",
-      "contributions": 40,
-      "additions": 10159,
-      "deletions": 4267,
-      "hireable": true
+      "url": "https://github.com/apps/greenkeeper",
+      "contributions": 63,
+      "additions": 74,
+      "deletions": 72,
+      "hireable": null
     },
     {
       "name": "Aman Mittal",
       "email": null,
       "url": "https://github.com/amandeepmittal",
-      "contributions": 82,
-      "additions": 2977,
-      "deletions": 645,
-      "hireable": true
+      "contributions": 89,
+      "additions": 5150,
+      "deletions": 3122,
+      "hireable": null
+    },
+    {
+      "name": "Kaustubh D",
+      "email": null,
+      "url": "https://github.com/kayd33",
+      "contributions": 1,
+      "additions": 28,
+      "deletions": 19,
+      "hireable": null
+    },
+    {
+      "name": "Raiya Jessa",
+      "email": null,
+      "url": "https://github.com/raiyaj",
+      "contributions": 1,
+      "additions": 26,
+      "deletions": 30,
+      "hireable": null
     },
     {
       "name": "Stephanie Zeng",
@@ -143,17 +171,16 @@
       "contributions": 3,
       "additions": 9,
       "deletions": 7,
-      "hireable": true
+      "hireable": null
     },
     {
-      "name": "Kaustubh",
+      "name": "Emanuel Quimper",
       "email": null,
-      "url": "https://github.com/kayd33",
-      "contributions": 3,
-      "additions": 0,
-      "deletions": 1,
+      "url": "https://github.com/EQuimper",
+      "contributions": 2,
+      "additions": 1166,
+      "deletions": 1867,
       "hireable": true
     }
-  ],
-  "snyk": true
+  ]
 }
