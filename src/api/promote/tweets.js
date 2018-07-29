@@ -1,5 +1,5 @@
 const slack = `
-Here's the link to the official #100DaysOfCode slack channel!
+Here's the link to the official #100DaysOfCode Slack Channel!
 
 Join us to:
 
@@ -8,7 +8,22 @@ Join us to:
 3) Connect
 4) Discuss anything
 
-https://bit.ly/2nsWDDB
+https://t.co/eIBgFOr2BL
+`
+
+const discord = `
+Here's the link to the official #100DaysOfCode Discord Channel!
+
+Join us to:
+
+1) Get help
+2) Help others
+3) Connect
+4) Discuss anything
+
+... many more
+
+https://t.co/2VJqlJfiYo
 `
 
 const instagram = `
@@ -28,5 +43,6 @@ Invite link: http://bit.ly/2nsWDDB
 module.exports = {
   slack,
   instagram,
-  slackHelp
+  slackHelp,
+  discord
 }
