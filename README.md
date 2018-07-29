@@ -2,12 +2,12 @@
 
 <strong>Helping developers who participate in
 [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
-engage on Twitter.</strong>
+to engage on Twitter.</strong>
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/spences10/100DaysOfCode-twitter-bot.svg)](https://greenkeeper.io/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
+[![Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/HSJgHMW)
 [![GitHub issues](https://img.shields.io/github/issues/freeCodeCamp/100DaysOfCode-twitter-bot.svg?&colorB=ff0000)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/freeCodeCamp/100DaysOfCode-twitter-bot.svg?colorB=1FBF14)](https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/pulls)
 
@@ -17,29 +17,33 @@ engage on Twitter.</strong>
       alt="follow on Twitter"></a>
 </p>
 
-![Imgur](http://i.imgur.com/Ufo9BLY.png)
+![Logo](https://pbs.twimg.com/profile_images/1021074782211706880/_tWuDtdg_400x400.jpg)
 
 ## Features
 
-#### Retweets and likes tweets
+### Retweets and likes tweets
 
 ![Screenshot1](http://i.imgur.com/V35iX70.png)
 
-#### Sends a thank-you reply to new followers
+### Sends a thank-you reply to new followers
 
 ![Screenshot2](http://i.imgur.com/0LAvqUd.png)
 
-#### Congratulates users on starting/finishing [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
+### Congratulates users on starting/finishing [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 
 ![Imgur](http://i.imgur.com/d8pu9LO.png)
 
-#### Tweets back encouragement if a [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) tweet has negative sentiment
+### Tweets back encouragement if a [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash) tweet has negative sentiment
 
 ![Imgur](http://i.imgur.com/GQLoYhG.png)
 
-#### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) to give users daily encouragement
+### Tracks user interaction via [`LevelDB`](https://github.com/Level/level) to give users daily encouragement
 
-#### Uses a cron-like [job scheduler](https://github.com/node-schedule/node-schedule) to tweet 'Project of the Day'
+### Uses a cron-like [job scheduler](https://github.com/node-schedule/node-schedule) to tweet 'Project of the Day'
+
+### Blacklist Spammers who abuse [#100DaysOfCode]
+
+### freeCodeCamp challenges and Help Channels (such as Slack, Discord, etc.) are merged in an API to constantly tweet links for new joiners/followers
 
 ---
 
