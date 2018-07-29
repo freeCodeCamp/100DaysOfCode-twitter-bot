@@ -4,7 +4,6 @@
 [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?src=hash)
 engage on Twitter.</strong>
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/spences10/100DaysOfCode-twitter-bot.svg)](https://greenkeeper.io/)
 [![License (3-Clause BSD)](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](http://opensource.org/licenses/BSD-3-Clause)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Connect with us on Slack](https://img.shields.io/badge/-Slack%20Channel-3b99ef.svg?colorA=02c775&style=flat&logo=slack)](https://100xcode.slack.com/)
