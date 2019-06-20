@@ -73,8 +73,6 @@ them using GitHub's
 * You will need your _own_ Twitter account for testing, since the bot
   tweets from this account. Generate your Twitter API keys by
   [creating a new app](https://apps.twitter.com/app/new).
-* Generate your Sentiment API key
-  [here](https://market.mashape.com/vivekn/sentiment-3).
 * Fork this repository.
 * Create an `.env` file and add in your API keys and Twitter handle,
   like so:
@@ -84,7 +82,6 @@ TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxxxxxxxdMhxg
 TWITTER_CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxkFNNj1H107PFv1mvWwEM6CZH0fjymV
 TWITTER_ACCESS_TOKEN=xxxxxxxxx-xxxxxxxxxxxxxxxxxxxxecKpi90bFhdsGG2N7iII
 TWITTER_ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxZAU8wNKAPU8Qz2c0PhOo43cGO
-SENTIMENT_KEY=xxxxxxxxxxxxxxxxxxxx7Ev80Pacp1h0c2kjsnMVVrG5m9MNlF
 QUERY_STRING=#someTestHashtag
 TWITTER_USERNAME=YourTestTwitterAccountName
 ```
