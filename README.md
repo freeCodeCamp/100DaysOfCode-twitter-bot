@@ -104,4 +104,4 @@ TWITTER_USERNAME=YourTestTwitterAccountName
 
 BSD 3-Clause License
 
-Copyright (c) 2018, freeCodeCamp. All rights reserved.
+Copyright (c) 2018 - Present, freeCodeCamp. All rights reserved.
