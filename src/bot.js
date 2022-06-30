@@ -1,74 +1,83 @@
 // Implementation of #100DaysOfCode Bot
 
-console.log('==== #100DaysOfCode Bot Starting... ====')
+console.log('==== #100DaysOfCode Bot Starting... ====');
 
 // Import dependencies
-const Twit = require('twit')
-const schedule = require('node-schedule')
+const Twit = require('twit');
+const schedule = require('node-schedule');
 
 // Configuration
-const config = require('./config')
-const TwitterBot = new Twit(config.twitterKeys)
+const config = require('./config');
+const TwitterBot = new Twit(config.twitterKeys);
 
 // API
-
 const retweet = () => {
   const params = {
     q: config.query,
     result_type: config.result_type,
     lang: config.lang
-  }
+  };
+
   TwitterBot.get('search/tweets', params, (err, data) => {
     // when no errors
     if (!err) {
-      let retweetID = data.statuses[0].id_str
-
-      TwitterBot.post('statuses/retweet/:id', { id: retweetID }, (err, res) => {
-        if (res) {
-          console.log(`====> RETWEET SUCCESS ${retweetID}`)
-        }
-        if (err) {
-          console.log(`====> ERROR in RETWEET ${err}`)
-        }
-      })
+      if (data.statuses[0].text.split('#').length - 1 === 1) {
+        // if there is only one hashtag get the tweet's ID
+        let retweetID = data.statuses[0].id_str;
+        console.log(data.statuses[0]);
+        TwitterBot.post(
+          'statuses/retweet/:id',
+          { id: retweetID },
+          (err, res) => {
+            if (res) {
+              console.log(`====> RETWEET SUCCESS ${retweetID}`);
+            }
+            if (err) {
+              console.log(`====> ERROR in RETWEET ${err}`);
+            }
+          }
+        );
+      } else {
+        console.log('====> Nothing to tweet');
+      }
     } else {
-      console.log(`====> ERROR ${err}`)
+      console.log(`====> ERROR ${err}`);
     }
-  })
-}
+  });
+};
 
 // Invoke API
-retweet()
+retweet();
 // 30 minutes
-setInterval(retweet, 1800000)
+setInterval(retweet, 1800000);
 
-// Slack Channel Promotion
+// freeCodeCamp's Discord Channel Promotion
 
-const SLACKMESSAGE = `
-Here's the link to the official #100DaysOfCode Slack Channel!
+const SHARE_DISCORD_CHANNEL_LINK = `
+Here's the link to the official #100DaysOfCode Discord Channel!
 Join us to:
 1) Get help
 2) Help others
 3) Connect
 4) Discuss anything
-https://100xcode.slack.com/join/shared_invite/enQtNzQwMzIwMzQxODc5LWQwMjU5Mjg0N2ZiMzIzYzJiZmE0YjNiYTBiZDBjNjlkNjBmMTYxNDBmNmE2YmE2YzY4NTgzY2Y5NDQxNWY5ZDM
-`
+https://discord.com/invite/k77v9BnDcB
+`;
 
-const tweetSlackLink = () => {
-  const tweet = `${SLACKMESSAGE}`
+const tweetDiscordLink = () => {
+  const tweet = `${SHARE_DISCORD_CHANNEL_LINK}`;
   TwitterBot.post('statuses/update', { status: tweet }, () => {
-    console.log('SUCCESS: Slack Channel Link Sent')
-  })
-}
+    console.log('SUCCESS: Discord Channel Link Sent');
+  });
+};
 
-// Use cron-job to schedule Slack Channel Promotion
-const rule = new schedule.RecurrenceRule()
-rule.dayOfWeek = [0, new schedule.Range(1, 6)]
-rule.hour = 11
-rule.minute = 59
+// Use cron-job to schedule Discord Channel Promotion
+const rule = new schedule.RecurrenceRule();
+rule.dayOfWeek = [0, new schedule.Range(1, 6)];
+rule.hour = 11;
+rule.minute = 59;
 
 schedule.scheduleJob(rule, () => {
   // eslint-disable-next-line no-console
-  console.log('Cron Job runs successfully')
-  tweetSlackLink()
-})
+  console.log('Cron Job runs successfully');
+  tweetDiscordLink();
+});
