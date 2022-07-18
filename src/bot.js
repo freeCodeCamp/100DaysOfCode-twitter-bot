@@ -15,13 +15,14 @@ const retweet = () => {
   const params = {
     q: config.query,
     result_type: config.result_type,
-    lang: config.lang
+    lang: config.lang,
+    tweet_mode: "extended"
   };
 
   TwitterBot.get('search/tweets', params, (err, data) => {
     // when no errors
     if (!err) {
-      if (data.statuses[0].text.split('#').length - 1 === 1) {
+      if (data.statuses[0].full_text.split('#').length - 1 === 1) {
         // if there is only one hashtag get the tweet's ID
         let retweetID = data.statuses[0].id_str;
         console.log(data.statuses[0]);
