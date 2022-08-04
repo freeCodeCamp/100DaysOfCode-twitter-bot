@@ -17,8 +17,6 @@ to engage on Twitter.</strong>
       alt="follow on Twitter"></a>
 </p>
 
-![Logo](https://pbs.twimg.com/profile_images/1021074782211706880/_tWuDtdg_400x400.jpg)
-
 ## Features
 
 ### Retweets and likes tweets
