@@ -23,7 +23,7 @@ const retweet = () => {
     // when no errors
     if (!err) {
             const full_text_data = data.statuses[0].full_text ? data.statuses[0].full_text : undefined;
-            if ((data.statuses[0].full_text.length <140 ) && (data.statuses[0].full_text.split('#').length - 1 === 1) && (data.statuses[0].full_text.toLowerCase().includes("#100daysofcode"))){
+            if ((full_text_data <140 ) && (full_text_data.split('#').length - 1 === 1) && (full_text_data.toLowerCase().includes("#100daysofcode"))){
         // if there is only one hashtag get the tweet's ID
        
         let retweetID = data.statuses[0].id_str;
