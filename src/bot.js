@@ -16,14 +16,16 @@ const retweet = () => {
     q: config.query,
     result_type: config.result_type,
     lang: config.lang,
-    tweet_mode: "extended"
+    tweet_mode: 'extended'
   };
 
   TwitterBot.get('search/tweets', params, (err, data) => {
     // when no errors
     if (!err) {
-      if (data.statuses[0].full_text.split('#').length - 1 === 1) {
+            const full_text_data = data.statuses?.[0]?.full_text;
+            if ((full_text_data <140 ) && (full_text_data?.split('#')?.length - 1 === 1) && (full_text_data?.toLowerCase()?.includes("#100daysofcode"))){
         // if there is only one hashtag get the tweet's ID
+       
         let retweetID = data.statuses[0].id_str;
         console.log(data.statuses[0]);
         TwitterBot.post(
