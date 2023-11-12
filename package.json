@@ -22,7 +22,7 @@
   "dependencies": {
     "contributor": "0.1.25",
     "dotenv": "^5.0.0",
-    "node-schedule": "1.3.0",
+    "node-schedule": "1.3.3",
     "twit": "^2.2.11"
   },
   "repository": {
