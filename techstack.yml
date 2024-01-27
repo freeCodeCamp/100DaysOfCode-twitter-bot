@@ -1,0 +1,94 @@
+repo_name: freeCodeCamp/100DaysOfCode-twitter-bot
+report_id: 6aaf6c898561820c6eeb5886fe12056f
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-27T03:50:22+00:00'
+requested_by: zairahira
+provider: github
+branch: main
+detected_tools_count: 7
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot
+  detection_source: Repo Metadata
+- name: Dotenv
+  description: Loads environment variables from .env for Nodejs projects
+  website_url: https://github.com/motdotla/dotenv
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Server Configuration and Automation
+  image_url: https://img.stackshare.io/service/8067/default_90dcb1286af7685c68df319c764b80704df1155b.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Aman Mittal
+  last_updated_on: 2022-06-30 17:48:42.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot
+  detection_source: Repo Metadata
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Aman Mittal
+  last_updated_on: 2016-06-20 06:47:09.000000000 Z
+- name: Twitter API
+  description: Build bots that communicate smartly.
+  website_url: https://twitter.com/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2466/twitterdev_gear.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Aman Mittal
+  last_updated_on: 2022-06-30 17:48:42.000000000 Z
+- name: node-schedule
+  description: A cron-like and not-cron-like job scheduler for Node
+  package_url: https://www.npmjs.com/node-schedule
+  version: 1.3.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17126/default_0ffbf6d9ee2940fe94be8424fd9afff068fff458.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Aman Mittal
+  last_updated_on: 2022-06-30 17:48:42.000000000 Z
+- name: twit
+  description: Twitter API client for node
+  package_url: https://www.npmjs.com/twit
+  version: 2.2.11
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18372/default_6da9f8de2035c7ad69ecf412df9fe80b73f9797a.png
+  detection_source_url: https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Aman Mittal
+  last_updated_on: 2022-06-30 17:48:42.000000000 Z
